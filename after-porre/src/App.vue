@@ -8,7 +8,6 @@
 
 <script>
 import TelaInicial from './components/TelaInicial';
-
 export default {
   name: 'App',
 

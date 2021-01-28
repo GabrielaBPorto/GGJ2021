@@ -7,7 +7,7 @@
         </v-row>
         <v-row align="center">
             <v-col cols="12" sm="6" justify="center">
-                <BotaoStart />
+                <BotaoStart/>
             </v-col>
         </v-row>
     </v-container>
@@ -17,12 +17,12 @@ import BotaoStart from './BotaoStart.vue';
 import TituloInicial from './TituloInicial';
 export default {
     data: () => ({
-        init:''
+        init:''          
     }),
     components:{
         TituloInicial,
         BotaoStart
     }
-    
+
   }
 </script>
