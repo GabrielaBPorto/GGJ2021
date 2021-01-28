@@ -22,8 +22,13 @@ After Porre é uma visual novel interativa que retraça os passos do protagonist
 ``` bash
 
 npm install -g vue-cli
-
+```
+## Instalar pacotes do projeto
+``` bash
 npm i
+```
 
+## Rodar o projeto em ambiente local
+```
 npm run serve
 ```
