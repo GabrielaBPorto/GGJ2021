@@ -10,13 +10,13 @@ After Porre é uma visual novel interativa que retraça os passos do protagonist
 
 ## Equipe
 
-Cesar Camillo - Desenvolvedor
-Marcella Wandrey - Escritora
-Leonardo Purcote - Escritor
-Gabriela Porto - Desenvolvedora
-Miguel Primo - Música
-Nicollas Meister - Desenvolvedor
-Erika Yamamoto - Artista
++ Cesar Camillo - Desenvolvedor
++ Marcella Wandrey - Escritora
++ Leonardo Purcote - Escritor
++ Gabriela Porto - Desenvolvedora
++ Miguel Primo - Música
++ Nicollas Meister - Desenvolvedor
++ Erika Yamamoto - Artista
 
 ## Comandos
 ``` bash
