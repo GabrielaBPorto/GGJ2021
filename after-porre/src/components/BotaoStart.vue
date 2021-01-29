@@ -1,7 +1,14 @@
 <template>
-  <div>
-    <v-btn v-on:click="playsound('/yoshi-tongue.mp3')">START</v-btn>
-  </div>  
+  <v-container>
+    <v-row class="mx-5">
+      <v-spacer></v-spacer>
+      <v-col cols="12" sm="12">
+          <v-card flat class="d-flex justify-center">
+              <v-btn v-on:click="playsound('/yoshi-tongue.mp3')">START</v-btn>
+          </v-card>
+      </v-col>
+    </v-row>
+  </v-container>  
 </template>
 <script>
 export default {
@@ -14,6 +21,7 @@ export default {
         var playPromise = sound.play();
 
         if (playPromise !== undefined) {
+          
             playPromise.then(response => {
               console.log('Foi: ' + response)
             })
