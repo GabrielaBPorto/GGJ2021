@@ -1,24 +1,34 @@
 <template>
-    <v-card class="px-2 d-flex align-end justify-center" :height="heightSize"   flat>
+    <v-card class="px-2 d-flex align-end justify-center" :height="heightSize" flat>
         <v-img
-            lazy-src="https://cdn.discordapp.com/attachments/804368222953537627/804803791077638244/afterporre3.png"
-            src="https://cdn.discordapp.com/attachments/804368222953537627/804803791077638244/afterporre3.png"
-            style="position:relative; display:inline-block;"
+            lazy-src="https://cdn.discordapp.com/attachments/804368222953537627/804833953105182780/afterporre4.png"
+            src="https://cdn.discordapp.com/attachments/804368222953537627/804833953105182780/afterporre4.png"
+            style="position:relative; display:inline-block;top:45%;margin-right:20px"
             ></v-img>
-        <v-row style="position:absolute">
-            <v-col cols="12" sm="12">
-                <v-card flat class="d-flex justify-center">
-                    <v-card-title id="titulo-parte1">After</v-card-title>
-                </v-card>
-            </v-col>
-            <v-col cols="12" sm="12">
-                <v-card flat class="d-flex justify-center mx-5">
-                    <v-card-title id="titulo-parte2">Porre</v-card-title>
-                </v-card>
-            </v-col>
+        <v-row style="position:absolute;top:45%">
+            <v-container style="border:solid;border-color:#a7e5fb;">
+                <v-col cols="12" sm="12">
+                    <v-card flat class="d-flex justify-center">
+                        <v-card-title id="titulo-parte1">After</v-card-title>
+                    </v-card>
+                </v-col>
+                <v-col cols="12" sm="12">
+                    <v-card flat class="d-flex justify-center mx-5">
+                        <v-card-title id="titulo-parte2">Porre</v-card-title>
+                    </v-card>
+                </v-col>
+            </v-container>
+            <v-container>
+                <v-row class="mt-5">
+                    <v-spacer class="mt-4"></v-spacer>
+                    <v-col cols="12" sm="12" class="mt-5">
+                        <v-card flat class="d-flex justify-center">
+                            <v-btn id="botaoStart" outlined flat x-large v-on:click="playsound('/yoshi-tongue.mp3')">START</v-btn>
+                        </v-card>
+                    </v-col>
+                </v-row>
+            </v-container> 
         </v-row>
-        
-        
     </v-card>
 </template>
 <script>
@@ -37,6 +47,8 @@ export default {
 </script>
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Major+Mono+Display&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
+
 #titulo-parte1{
     color: #f579aa;
     font-size: 117px;
@@ -44,7 +56,7 @@ export default {
 }
 #titulo-parte2{
     color: #a7e5fb;
-    font-size: 60px;
+    font-size: 117px;
     font-family: 'Major Mono Display', monospace;
 }
 .v-card {
@@ -62,6 +74,17 @@ export default {
     left:50%;
     padding:0;
     border:0 none;
+}
+#botaoStart{
+    min-height: 84px;
+    border-color: #8ef4c0;
+}
+
+#botaoStart span{
+    height: 100%  !important;
+    font-family: 'VT323', monospace;
+    color:#8ef4c0;
+    font-size: 60px;
 }
 
 </style>
