@@ -1,5 +1,5 @@
 <template>
-  <v-btn v-on:click="playsound('http://www.sousound.com/music/healing/healing_01.mp3')">MLEM</v-btn>
+  <v-btn v-on:click="playsound('../assets/yoshi-tongue.mp3')">MLEM</v-btn>
 </template>
 <script>
 export default {
@@ -7,7 +7,7 @@ export default {
     }),
     methods: {
       playsound: function (nomeArquivo) {
-        var sound = new Audio(nomeArquivo);
+        var sound = new Audio(require(nomeArquivo));
         console.log(sound)
         sound.play();
         }
