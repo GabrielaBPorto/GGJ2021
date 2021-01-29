@@ -26,7 +26,7 @@ export default {
               console.log('Foi: ' + response)
             })
             .catch(error => {
-              console.error('Erro: ' + error)
+              console.error('o: ' + error)
             })
           }
         }
