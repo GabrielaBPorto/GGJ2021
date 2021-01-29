@@ -22,7 +22,9 @@ export default {
     components:{
         TituloInicial,
         BotaoStart
+    },
+    mounted (){
+        console.log(this.$store.state.valor)
     }
-
   }
 </script>
