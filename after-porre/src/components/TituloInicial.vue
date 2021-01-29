@@ -1,14 +1,24 @@
 <template>
-    <v-card class="px-2" :height="heightSize" flat>
-        <v-card :height="heightSize/2" flat >
-            <v-card-title id="titulo1">AFTER</v-card-title>
-        </v-card>
-        <v-card flat :height="heightSize/2">
-            <v-card-title id="titulo2">PORRE</v-card-title>
-        </v-card>
+    <v-card class="px-2 d-flex align-end justify-center" :height="heightSize" flat>
+        <v-row>
+            <v-spacer></v-spacer>
+            <v-col cols="12" sm="12">
+                <v-card flat class="d-flex justify-center">
+                    <v-card-title id="titulo-parte1">After</v-card-title>
+                </v-card>
+            </v-col>
+            <v-col cols="12" sm="12">
+                <v-card flat class="d-flex justify-center mx-5">
+                    <v-card-title id="titulo-parte2">Porre</v-card-title>
+                </v-card>
+            </v-col>
+        </v-row>
+        
+        
     </v-card>
 </template>
 <script>
+
 export default {
     data: () => ({
         heightSize: ''
@@ -19,13 +29,19 @@ export default {
 }
 </script>
 <style>
-#titulo1{
+@import url('https://fonts.googleapis.com/css2?family=Major+Mono+Display&display=swap');
+#titulo-parte1{
     color: #f579aa;
     font-size: 117px;
+    font-family: 'Major Mono Display', monospace;
 }
-#titulo2{
+#titulo-parte2{
     color: #a7e5fb;
     font-size: 60px;
+    font-family: 'Major Mono Display', monospace;
+}
+.v-card {
+    background-color: transparent !important;
 }
 
 </style>

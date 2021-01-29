@@ -1,12 +1,12 @@
 <template>
     <v-container fluid>
-        <v-row align="center">
-            <v-col cols="12" sm="6" justify="center">
+        <v-row justify="center" align="end">
+            <v-col cols="12" sm="6" justify="center" align="end">
                 <TituloInicial />
             </v-col>
         </v-row>
-        <v-row align="center">
-            <v-col cols="12" sm="6" justify="center">
+        <v-row justify="center" align="center">
+            <v-col cols="12" sm="6" justify="center" align="center">
                 <BotaoStart/>
             </v-col>
         </v-row>
@@ -17,14 +17,11 @@ import BotaoStart from './BotaoStart.vue';
 import TituloInicial from './TituloInicial';
 export default {
     data: () => ({
-        init:''          
+        
     }),
     components:{
         TituloInicial,
         BotaoStart
-    },
-    mounted (){
-        console.log(this.$store.state.valor)
     }
   }
 </script>
