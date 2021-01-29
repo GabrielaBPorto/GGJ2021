@@ -5,23 +5,17 @@
                 <TituloInicial />
             </v-col>
         </v-row>
-        <v-row justify="center" align="center">
-            <v-col cols="12" sm="6" justify="center" align="center">
-                <BotaoStart/>
-            </v-col>
-        </v-row>
     </v-container>
 </template>
 <script>
-import BotaoStart from './BotaoStart.vue';
 import TituloInicial from './TituloInicial';
 export default {
     data: () => ({
         
     }),
     components:{
-        TituloInicial,
-        BotaoStart
+        TituloInicial
     }
+
   }
 </script>
