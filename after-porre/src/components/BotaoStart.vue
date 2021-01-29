@@ -1,6 +1,6 @@
 <template>
   <div>
-    <v-btn v-on:click="playsound('/yoshi-tongue.mp3')">MLEM</v-btn>
+    <v-btn v-on:click="playsound('/yoshi-tongue.mp3')">START</v-btn>
   </div>  
 </template>
 <script>
@@ -18,7 +18,7 @@ export default {
               console.log('Foi: ' + response)
             })
             .catch(error => {
-              console.log('Erro: ' + error)
+              console.error('Erro: ' + error)
             })
           }
         }
