@@ -1,7 +1,11 @@
 <template>
-    <v-card class="px-2 d-flex align-end justify-center" :height="heightSize" flat>
-        <v-row>
-            <v-spacer></v-spacer>
+    <v-card class="px-2 d-flex align-end justify-center" :height="heightSize"   flat>
+        <v-img
+            lazy-src="https://cdn.discordapp.com/attachments/804368222953537627/804803791077638244/afterporre3.png"
+            src="https://cdn.discordapp.com/attachments/804368222953537627/804803791077638244/afterporre3.png"
+            style="position:relative; display:inline-block;"
+            ></v-img>
+        <v-row style="position:absolute">
             <v-col cols="12" sm="12">
                 <v-card flat class="d-flex justify-center">
                     <v-card-title id="titulo-parte1">After</v-card-title>
@@ -26,6 +30,9 @@ export default {
     mounted() {
         this.heightSize = window.innerHeight/2
     },
+    methods: {
+        
+    }
 }
 </script>
 <style>
@@ -42,6 +49,19 @@ export default {
 }
 .v-card {
     background-color: transparent !important;
+}
+
+.teste-wrap{
+    position:relative;
+    text-align:center;
+}
+.teste-wrap .v-row{
+    position:absolute;
+    z-index:1;
+    top:50%;
+    left:50%;
+    padding:0;
+    border:0 none;
 }
 
 </style>
