@@ -32,3 +32,16 @@ npm i
 ```
 npm run serve
 ```
+
+## Instalando e configurando o ESLint para uso com o Vetur
+```
+npm install --D eslint
+.\node_modules\.bin\eslint --init (Barras invertidas no Linux/Mac)
+Selecione as seguintes opções durante a configuração:
+    + To check syntax and find problems
+    + Javascript modules (import/export)
+    + Vue.js
+    + No
+    + Browser
+    + JavaScript
+    + Yes
