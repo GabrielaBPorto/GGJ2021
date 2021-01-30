@@ -8,12 +8,15 @@ export default () => ({
       { id: 'balada_inicio', path: require('@/assets/sounds/balada_inicio.mp3')},
       { id: 'balada_loop', path: require('@/assets/sounds/balada_loop.mp3')},
       { id: 'quarto_inicio', path: require('@/assets/sounds/quarto_inicio.mp3')},
-      { id: 'quarto_loop', path: require('@/assets/sounds/quarto_loop.mp3')}
+      { id: 'quarto_loop', path: require('@/assets/sounds/quarto_loop.mp3')},
+      { id: 'externa_noite_inicio', path: require('@/assets/sounds/externa_noite_inicio.mp3')},
+      { id: 'externa_noite_loop', path: require('@/assets/sounds/externa_noite_loop.mp3')}
     ],
     images: [
       // Ícones & Objetos
       { id: 'icone_celular', path: require('@/assets/images/icone_celular.png')},
       { id: 'icone_celular_notif', path: require('@/assets/images/icone_celular_notif.png')},
+      { id: 'tela_inicial', path: require('@/assets/images/afterporreTelaInicial.png')},
 
       // Bartender
       { id: 'bartender_feliz', path: require('@/assets/images/bartender/bartender_feliz.png')},

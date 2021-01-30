@@ -1,8 +1,8 @@
 <template>
     <v-card class="px-2 d-flex align-end justify-center" :height="heightSize" flat>
         <v-img
-            lazy-src="@/assets/afterporreTelaInicial.png"
-            src="@/assets/afterporreTelaInicial.png"
+            lazy-src="@/assets/images/afterporreTelaInicial.png"
+            src="@/assets/images/afterporreTelaInicial.png"
             style="position:relative; display:inline-block;top:45%;margin-right:20px"
             ></v-img>
         <v-row style="position:absolute;top:45%">
