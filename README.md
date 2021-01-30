@@ -14,7 +14,7 @@ After Porre é uma visual novel interativa que retraça os passos do protagonist
 + Marcella Wandrey - Escritora
 + Leonardo Purcote - Escritor
 + Gabriela Porto - Desenvolvedora
-+ Miguel Primo - Produtor Musical
++ Miguel Primo - Designer Sonoro
 + Nicollas Meister - Desenvolvedor
 + Erika Yamamoto - Artista
 
