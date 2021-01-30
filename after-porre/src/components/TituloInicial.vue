@@ -18,16 +18,6 @@
                     </v-card>
                 </v-col>
             </v-container>
-            <v-container>
-                <v-row class="mt-5">
-                    <v-spacer class="mt-4"></v-spacer>
-                    <v-col cols="12" sm="12" class="mt-5">
-                        <v-card flat class="d-flex justify-center">
-                            <v-btn id="botaoStart" outlined flat x-large v-on:click="playsound('/yoshi-tongue.mp3')">START</v-btn>
-                        </v-card>
-                    </v-col>
-                </v-row>
-            </v-container> 
         </v-row>
     </v-card>
 </template>

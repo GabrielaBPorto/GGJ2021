@@ -4,7 +4,7 @@
       <v-spacer></v-spacer>
       <v-col cols="12" sm="12">
           <v-card flat class="d-flex justify-center">
-              <v-btn v-on:click="playsound('/yoshi-tongue.mp3')">START</v-btn>
+              <v-btn v-on:click="playsound('inicio_inicio')">START</v-btn>
           </v-card>
       </v-col>
     </v-row>
@@ -16,7 +16,7 @@ export default {
     }),   
     methods: {
       playsound: function (nomeArquivo) {
-        const arqBase = require(`@/assets${nomeArquivo}`)
+        const arqBase = this.$store.getters.getSoundById(nomeArquivo)
         const sound = new Audio(arqBase);
         var playPromise = sound.play();
 
