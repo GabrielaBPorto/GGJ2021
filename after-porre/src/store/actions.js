@@ -3,8 +3,11 @@
 // const nome = function 
 
 export default {
-    trocarCena( { commit }) {
+    trocarCena( { commit, getters }) {
         commit('trocarCena');
+        const inicio = getters.getSceneMusicStart()
+        const loop = getters.getSceneMusicLoop()
+        commit('alterarMusica', inicio, loop)
     }
 }
   

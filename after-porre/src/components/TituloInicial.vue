@@ -43,13 +43,13 @@ export default {
     methods: {
         functionsStartButton(){
             this.$store.dispatch('trocarCena')
-            this.playsound('balada_inicio');
+            this.playsound(this.$store.getters.getSceneMusicStart());
             this.$router.push('/cena')
         },
 
         playsound: function (nomeArquivo) {
-        const arqBase = this.$store.getters.getSoundById(nomeArquivo)
-        const sound = new Audio(arqBase);
+        //const arqBase = this.$store.getters.getSoundById(nomeArquivo)
+        const sound = new Audio(nomeArquivo);
         var playPromise = sound.play();
 
         if (playPromise !== undefined) {
