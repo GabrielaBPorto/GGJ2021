@@ -62,7 +62,8 @@ export default {
         escolhas : ['Por que eu quis', 'Por que eu bebi demais'],
         textoAtual : '',
         bartenderAtual : 'bartender_rindo',
-        sequencia: 0        
+        sequencia: 0,
+        dialog: {}        
     }),
     methods: {
         backgroundImage() {
@@ -80,8 +81,9 @@ export default {
             }
         },
         randomizeInfo(){
-            this.sequencia = (this.sequencia % 7) + 1
-            this.textoAtual = this.$store.getters.getDialog(this.$store.state.cena, this.sequencia).text
+            this.sequencia = ((this.sequencia % 7) + 1)
+            this.dialog = this.$store.getters.getDialog(this.$store.state.cena, this.sequencia)
+            this.textoAtual = this.dialog.text
         },
         characterImage() {
             return this.$store.getters.getImageById(this.bartenderAtual)
