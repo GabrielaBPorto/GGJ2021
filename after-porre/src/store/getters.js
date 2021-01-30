@@ -48,4 +48,10 @@ export default {
                 return getters.getSoundById('inicio_loop')
         }
     },
+    getMsgs: (state) => (cena, msg) => {
+        return state.msgs.find(dialog => dialog.cena === cena & dialog.msg === msg)
+    },
+    getObjectMsg: (state) => (cena, item) => {
+        return state.objetos.find(objeto => objeto.cena === cena & objeto.objeto === item)
+    }
 }

@@ -16,6 +16,9 @@ export default {
         state.musica_inicio = inicio;
         state.musica_loop = loop;
     },
+    rotaCena1 (state, rota){
+        state.rotaCena1 = rota
+    }
 
 }
   
