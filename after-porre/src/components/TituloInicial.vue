@@ -1,8 +1,8 @@
 <template>
     <v-card class="px-2 d-flex align-end justify-center" :height="heightSize" flat>
         <v-img
-            lazy-src="@/assets/afterporreTelaInicial.png"
-            src="@/assets/afterporreTelaInicial.png"
+            lazy-src="@/assets/images/afterporreTelaInicial.png"
+            src="@/assets/images/afterporreTelaInicial.png"
             style="position:relative; display:inline-block;top:45%;margin-right:20px"
             ></v-img>
         <v-row style="position:absolute;top:45%">
@@ -18,12 +18,12 @@
                     </v-card>
                 </v-col>
             </v-container>
-            <v-container>
+             <v-container>
                 <v-row class="mt-5">
                     <v-spacer class="mt-4"></v-spacer>
                     <v-col cols="12" sm="12" class="mt-5">
                         <v-card flat class="d-flex justify-center">
-                            <v-btn id="botaoStart" outlined flat x-large v-on:click="playsound('/yoshi-tongue.mp3')">START</v-btn>
+                            <v-btn id="botaoStart" outlined flat x-large v-on:click="functionsStartButton()">START</v-btn>
                         </v-card>
                     </v-col>
                 </v-row>
@@ -41,7 +41,26 @@ export default {
         this.heightSize = window.innerHeight/2
     },
     methods: {
-        
+        functionsStartButton(){
+            this.playsound('inicio_inicio');
+            this.$router.push('/cena')
+        },
+        playsound: function (nomeArquivo) {
+        const arqBase = this.$store.getters.getSoundById(nomeArquivo)
+        const sound = new Audio(arqBase);
+        var playPromise = sound.play();
+
+        if (playPromise !== undefined) {
+          
+            playPromise.then(response => {
+              console.log('Foi: ' + response)
+            })
+            .catch(error => {
+              console.error('Erro: ' + error)
+            })
+          }
+        }
+      
     }
 }
 </script>

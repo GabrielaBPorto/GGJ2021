@@ -15,7 +15,9 @@ export default {
     }),
     components:{
         TituloInicial
+    },
+    mounted (){
+        console.log(this.$store.state.valor)
     }
-
   }
 </script>
