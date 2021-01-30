@@ -14,6 +14,8 @@ export default {
     },
     getImageByScene: (state, getters) => () => {
         switch (state.cena) {
+            case 0:
+                return getters.getImageById('tela_inicial')
             case 1:
                 return getters.getImageById('quarto_manha')
             case 3:
@@ -21,5 +23,29 @@ export default {
             default:
                 return getters.getImageById('quarto_dia')
         }
-    }
+    },
+    getSceneMusicStart: (state, getters) => () => {
+        switch (state.cena) {
+            case 0:
+                return getters.getSoundById('inicio_inicio')
+            case 1:
+                return getters.getSoundById('quarto_inicio')
+            case 3:
+                return getters.getSoundById('balada_inicio')
+            default:
+                return getters.getSoundById('inicio_inicio')
+        }
+    },
+    getSceneMusicLoop: (state, getters) => () => {
+        switch (state.cena) {
+            case 0:
+                return getters.getSoundById('inicio_loop')
+            case 1:
+                return getters.getSoundById('quarto_loop')
+            case 3:
+                return getters.getSoundById('balada_loop')
+            default:
+                return getters.getSoundById('inicio_loop')
+        }
+    },
 }
