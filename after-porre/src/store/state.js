@@ -45,6 +45,8 @@ export default () => ({
 
       { id: 'pegar_celular', path: require('@/assets/sounds/pegar_celular.mp3')},
       { id: 'abrir_celular', path: require('@/assets/sounds/abrir_celular.mp3')},
+
+      { id: 'pegar_tecido', path: require('@/assets/sounds/pegar_tecido.mp3')},
     ],
 
     // Imagens
@@ -158,6 +160,8 @@ export default () => ({
       { cena: 1, msg: 27, chat: 'melhor_amigo', sender: true, time: '17:07', text: 'Eu duvido que estivesse em condições pra falar com alguém pra isso'},
       { cena: 1, msg: 28, chat: 'melhor_amigo', sender: false, time: '17:09', text: 'Aaaah minha querida, confio mt nas suas habilidades sociais'},
       { cena: 1, msg: 30, chat: 'melhor_amigo', sender: false, time: '17:10', text: 'Tenho certeza que rolou algo assim'},
+
+      { cena: 1, msg: 31, chat: 'melhor_amigo', sender: false, time: '17:10', text: 'Enfim, tá em condições de vir aqui em casa pra conversarmos?'},
     ],
 
     objetos: [
