@@ -9,10 +9,10 @@
             <v-row style="right:0px">
                 <v-container fluid class="ma-2 d-flex justify-end">
                     <v-col cols="12" sm="2">
-                        <v-card flat v-if="!this.notificationCelular" @click="changePhoneNotification()" id="celular" class="d-flex justify-end" style="background-color: transparent !important;">
+                        <v-card flat v-if="!this.notificationCelular" @click="changePhoneNotification()" ripple="false" id="celular" class="d-flex justify-end" style="background-color: transparent !important;">
                             <v-img src="https://cdn.discordapp.com/attachments/804368222953537627/804524478323359794/iconecelular.png" contain max-height="150" max-width="250"></v-img>
                         </v-card>
-                        <v-card flat v-else-if="this.notificationCelular" @click="changePhoneNotification()" id="celular" class="d-flex justify-end" style="background-color: transparent !important;">
+                        <v-card flat v-else-if="this.notificationCelular" @click="changePhoneNotification()" ripple="false" id="celular" class="d-flex justify-end" style="background-color: transparent !important;">
                             <v-img src="https://cdn.discordapp.com/attachments/804368222953537627/804524480219185242/iconecelularnotif.png" contain max-height="150" max-width="250"></v-img>
                         </v-card>
                     </v-col>
@@ -47,7 +47,7 @@
                             class="mt-2">
 
                             </v-img>
-                            <v-card-text style="position:absolute;top:0;left: 10%">
+                            <v-card-text id="dialogo" style="position:absolute;top:0;left: 10%">
                                 {{this.textoAtual}}
                             </v-card-text>
                         </v-card>
@@ -77,6 +77,7 @@ export default {
   }
 </script>
 <style>
+@import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
 #fundo {
     height: 100%;
     width: 100%;
@@ -88,5 +89,14 @@ export default {
     background: rgba(0, 0, 0, 0.35) !important;
     border: solid;
     border-color: #20e2e3 !important;
+}
+.v-card__text{
+    font-family: 'VT323', monospace;
+    font-size: 24px !important;
+    color: white !important;
+}
+#dialogo{
+    font-size: 30px !important;
+    -webkit-text-stroke: 0.5px black;
 }
 </style>
