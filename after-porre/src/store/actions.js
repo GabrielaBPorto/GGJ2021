@@ -3,7 +3,9 @@
 // const nome = function 
 
 export default {
-    //nome
+    trocarCena( { commit }) {
+        commit('trocarCena');
+    }
 }
   
   

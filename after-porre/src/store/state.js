@@ -57,6 +57,7 @@ export default () => ({
       { id: 'ir_surpreso_blush', path: require('@/assets/images/interesse_romantico/ir_surpreso_blush.png')},
       { id: 'ir_surpreso', path: require('@/assets/images/interesse_romantico/ir_surpreso.png')},
       { id: 'ir', path: require('@/assets/images/interesse_romantico/ir.png')},
+      { id: 'ir_pe', path: require('@/assets/images/interesse_romantico/ir_pe.png')},
 
       // Melhor Amigo
       { id: 'melhor_amigo_pensativo', path: require('@/assets/images/melhor_amigo/melhor_amigo_pensativo.png')},
@@ -100,14 +101,45 @@ export default () => ({
       { cena: 1, msg: 3, chat: 'melhor_amigo', sender: false, time: '05:12', text: 'Avisa quando chegar em casa!'},
       { cena: 1, msg: 4, chat: 'melhor_amigo', sender: false, time: '13:58', text: 'Já acordou?????'},
       { cena: 1, msg: 5, chat: 'melhor_amigo', sender: false, time: '15:33', text: 'Alou???'},
-      { cena: 1, msg: 6, chat: 'melhor_amigo', sender: false, time: '16:00', text: 'Você tem duas ligações perdidas'}
+      { cena: 1, msg: 6, chat: 'melhor_amigo', sender: false, time: '16:00', text: 'Você tem duas ligações perdidas'},
+
+      { cena: 1, msg: 7, chat: 'melhor_amigo', sender: true, time: '16:59', text: 'Bom dia...'},
+      { cena: 1, msg: 8, chat: 'melhor_amigo', sender: true, time: '17:00', text: 'Não sei como nem quando cheguei'},
+      { cena: 1, msg: 9, chat: 'melhor_amigo', sender: true, time: '17:00', text: 'Mas tirando a ressaca eu tô bem, acho'},
+      { cena: 1, msg: 10, chat: 'melhor_amigo', sender: true, time: '17:01', text: 'O que foi que aconteceu ontem a noite???'},
+
+      { cena: 1, msg: 11, chat: 'melhor_amigo', sender: false, time: '17:01', text: 'AMADA... eu que te pergunto o que rolou'},
+      { cena: 1, msg: 12, chat: 'melhor_amigo', sender: false, time: '17:02', text: 'Eu te levei até o bar num momento da festa'},
+      { cena: 1, msg: 13, chat: 'melhor_amigo', sender: false, time: '17:03', text: 'Depois disso eu acho que tu tomou um chá de sumiço'},
+      { cena: 1, msg: 14, chat: 'melhor_amigo', sender: false, time: '17:02', text: 'E daí eu não vi nem sombra tua por lá'},
+
+      // Cena 1, Rota 1 - Não acho que eles tem esse drink no cardápio...
+      { cena: 1, msg: 7, chat: 'melhor_amigo', sender: true, time: '16:59', text: 'Bom dia...'},
+      { cena: 1, msg: 8, chat: 'melhor_amigo', sender: true, time: '17:00', text: 'Não sei como nem quando cheguei'},
+      { cena: 1, msg: 9, chat: 'melhor_amigo', sender: true, time: '17:00', text: 'Mas tirando a ressaca eu tô bem, acho'},
+      { cena: 1, msg: 10, chat: 'melhor_amigo', sender: true, time: '17:01', text: 'O que foi que aconteceu ontem a noite???'},
+
+      { cena: 1, msg: 11, chat: 'melhor_amigo', sender: false, time: '17:01', text: 'AMADA... eu que te pergunto o que rolou'},
+      { cena: 1, msg: 12, chat: 'melhor_amigo', sender: false, time: '17:02', text: 'Eu te levei até o bar num momento da festa'},
+      { cena: 1, msg: 13, chat: 'melhor_amigo', sender: false, time: '17:03', text: 'Depois disso eu acho que tu tomou um chá de sumiço'},
+      { cena: 1, msg: 14, chat: 'melhor_amigo', sender: false, time: '17:02', text: 'E daí eu não vi nem sombra tua por lá'},
+
+      // Cena 1, Rota 2 - Como assim eu sumi? A balada nem é tão grande assim
+      { cena: 1, msg: 7, chat: 'melhor_amigo', sender: true, time: '16:59', text: 'Bom dia...'},
+      { cena: 1, msg: 8, chat: 'melhor_amigo', sender: true, time: '17:00', text: 'Não sei como nem quando cheguei'},
+      { cena: 1, msg: 9, chat: 'melhor_amigo', sender: true, time: '17:00', text: 'Mas tirando a ressaca eu tô bem, acho'},
+      { cena: 1, msg: 10, chat: 'melhor_amigo', sender: true, time: '17:01', text: 'O que foi que aconteceu ontem a noite???'},
+
+      { cena: 1, msg: 11, chat: 'melhor_amigo', sender: false, time: '17:01', text: 'AMADA... eu que te pergunto o que rolou'},
+      { cena: 1, msg: 12, chat: 'melhor_amigo', sender: false, time: '17:02', text: 'Eu te levei até o bar num momento da festa'},
+      { cena: 1, msg: 13, chat: 'melhor_amigo', sender: false, time: '17:03', text: 'Depois disso eu acho que tu tomou um chá de sumiço'},
+      { cena: 1, msg: 14, chat: 'melhor_amigo', sender: false, time: '17:02', text: 'E daí eu não vi nem sombra tua por lá'},
     ],
 
     // Estados Internos do Jogo
-    game_start: false,
     oculos: 0,
     notif_celular: false,
-    cena: 3,
+    cena: 0,
     musica_inicio: 'inicio_inicio',
     musica_loop: 'inicio_loop'
 })
