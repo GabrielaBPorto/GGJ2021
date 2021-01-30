@@ -10,7 +10,11 @@ export default () => ({
       { id: 'quarto_inicio', path: require('@/assets/sounds/quarto_inicio.mp3')},
       { id: 'quarto_loop', path: require('@/assets/sounds/quarto_loop.mp3')},
       { id: 'externa_noite_inicio', path: require('@/assets/sounds/externa_noite_inicio.mp3')},
-      { id: 'externa_noite_loop', path: require('@/assets/sounds/externa_noite_loop.mp3')}
+      { id: 'externa_noite_loop', path: require('@/assets/sounds/externa_noite_loop.mp3')},
+      { id: 'externa_dia_inicio', path: require('@/assets/sounds/externa_dia_inicio.mp3')},
+      { id: 'externa_dia_loop', path: require('@/assets/sounds/externa_dia_loop.mp3')},
+      { id: 'melhor_amigo_inicio', path: require('@/assets/sounds/melhor_amigo_inicio.mp3')},
+      { id: 'melhor_amigo_loop', path: require('@/assets/sounds/melhor_amigo_loop.mp3')}
     ],
     images: [
       // Ícones & Objetos
