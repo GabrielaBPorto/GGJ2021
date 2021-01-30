@@ -19,6 +19,8 @@ export default () => ({
       { id: 'melhor_amigo_loop', path: require('@/assets/sounds/melhor_amigo_loop.mp3')},
       { id: 'interesse_romantico_inicio', path: require('@/assets/sounds/interesse_romantico_inicio.mp3')},
       { id: 'interesse_romantico_loop',   path: require('@/assets/sounds/interesse_romantico_loop.mp3')},
+      { id: 'cartorio_inicio', path: require('@/assets/sounds/cartorio_inicio.mp3')},
+      { id: 'cartorio_loop',   path: require('@/assets/sounds/cartorio_loop.mp3')},
     ],
 
     // Imagens
@@ -27,6 +29,12 @@ export default () => ({
       { id: 'icone_celular', path: require('@/assets/images/icone_celular.png')},
       { id: 'icone_celular_notif', path: require('@/assets/images/icone_celular_notif.png')},
       { id: 'tela_inicial', path: require('@/assets/images/afterporreTelaInicial.png')},
+      { id: 'celular', path: require('@/assets/images/objetos/celular.png')},
+      { id: 'coisas', path: require('@/assets/images/objetos/coisas.png')},
+      { id: 'cueca', path: require('@/assets/images/objetos/cueca.png')},
+      { id: 'oculos', path: require('@/assets/images/objetos/oculos.png')},
+      { id: 'papel', path: require('@/assets/images/objetos/papel.png')},
+      { id: 'remedio', path: require('@/assets/images/objetos/remedio.png')},
 
       // Bartender
       { id: 'bartender_feliz', path: require('@/assets/images/bartender/bartender_feliz.png')},
@@ -57,6 +65,7 @@ export default () => ({
       { id: 'melhor_amigo_surpreso', path: require('@/assets/images/melhor_amigo/melhor_amigo_surpreso.png')},
       { id: 'melhor_amigo_zoando', path: require('@/assets/images/melhor_amigo/melhor_amigo_zoando.png')},
       { id: 'melhor_amigo', path: require('@/assets/images/melhor_amigo/melhor_amigo.png')},
+      { id: 'melhor_amigo_pe', path: require('@/assets/images/melhor_amigo/melhor_amigo_pe.png')},
 
       // Cenários
       { id: 'bar', path: require('@/assets/images/cenario/bar.png')},
@@ -64,7 +73,8 @@ export default () => ({
       { id: 'quarto_amigo', path: require('@/assets/images/cenario/quarto_amigo.png')},
       { id: 'quarto_dia', path: require('@/assets/images/cenario/quarto_dia.png')},
       { id: 'quarto_manha', path: require('@/assets/images/cenario/quarto_manha.png')},
-      { id: 'quarto_noite', path: require('@/assets/images/cenario/quarto_noite.png')}
+      { id: 'quarto_noite', path: require('@/assets/images/cenario/quarto_noite.png')},
+      { id: 'quarto_amigo_papel', path: require('@/assets/images/cenario/quarto_amigo_papel.png')}
     ],
 
     // Diálogos
@@ -85,17 +95,19 @@ export default () => ({
     ],
     
     msgs_cel: [
-      { cena: 1, msg: 1, personagem: 'melhor_amigo', time: '04:07', text: 'Kdê vcê?????'},
-      { cena: 1, msg: 2, personagem: 'melhor_amigo', time: '05:11', text: 'Te perdi na festa e já voltei pra casa.' },
-      { cena: 1, msg: 3, personagem: 'melhor_amigo', time: '05:12', text: 'Avisa quando chegar em casa!'},
-      { cena: 1, msg: 4, personagem: 'melhor_amigo', time: '13:58', text: 'Já acordou?????'},
-      { cena: 1, msg: 5, personagem: 'melhor_amigo', time: '15:33', text: 'Alou???'},
-      { cena: 1, msg: 6, personagem: 'melhor_amigo', time: '16:00', text: 'Você tem duas ligações perdidas'}
+      { cena: 1, msg: 1, chat: 'melhor_amigo', sender: false, time: '04:07', text: 'Kdê vcê?????'},
+      { cena: 1, msg: 2, chat: 'melhor_amigo', sender: false, time: '05:11', text: 'Te perdi na festa e já voltei pra casa.' },
+      { cena: 1, msg: 3, chat: 'melhor_amigo', sender: false, time: '05:12', text: 'Avisa quando chegar em casa!'},
+      { cena: 1, msg: 4, chat: 'melhor_amigo', sender: false, time: '13:58', text: 'Já acordou?????'},
+      { cena: 1, msg: 5, chat: 'melhor_amigo', sender: false, time: '15:33', text: 'Alou???'},
+      { cena: 1, msg: 6, chat: 'melhor_amigo', sender: false, time: '16:00', text: 'Você tem duas ligações perdidas'}
     ],
 
     // Estados Internos do Jogo
     game_start: false,
     oculos: 0,
     notif_celular: false,
-    cena: 0
+    cena: 3,
+    musica_inicio: 'inicio_inicio',
+    musica_loop: 'inicio_loop'
 })
