@@ -1,19 +1,16 @@
 <template>
     <v-container fluid class="mx-0 pa-0">
         <v-img id="fundo"
-            lazy-src="https://cdn.discordapp.com/attachments/804482043093844018/804844809802088478/bar2.png"
-            src="https://cdn.discordapp.com/attachments/804482043093844018/804844809802088478/bar2.png"
+            :lazy-src="backgroundImage()"
+            :src="backgroundImage()"
             style="position:relative; display:inline-block;"
             ></v-img>
         <v-container fluid style="position:absolute;top:0px;">
             <v-row style="right:0px">
                 <v-container fluid class="ma-2 d-flex justify-end">
                     <v-col cols="12" sm="2">
-                        <v-card flat v-if="!this.notificationCelular" @click="changePhoneNotification()" ripple="false" id="celular" class="d-flex justify-end" style="background-color: transparent !important;">
-                            <v-img src="https://cdn.discordapp.com/attachments/804368222953537627/804524478323359794/iconecelular.png" contain max-height="150" max-width="250"></v-img>
-                        </v-card>
-                        <v-card flat v-else-if="this.notificationCelular" @click="changePhoneNotification()" ripple="false" id="celular" class="d-flex justify-end" style="background-color: transparent !important;">
-                            <v-img src="https://cdn.discordapp.com/attachments/804368222953537627/804524480219185242/iconecelularnotif.png" contain max-height="150" max-width="250"></v-img>
+                        <v-card flat @click="changePhoneNotification()" :ripple="false" id="celular" class="d-flex justify-end" style="background-color: transparent !important;">
+                            <v-img :src="cellphoneImage()" contain max-height="150" max-width="250"></v-img>
                         </v-card>
                     </v-col>
                 </v-container>
@@ -41,8 +38,8 @@
             <v-row style="right:0px" class="mt-7 pt-7" >
                 <v-container fluid class="ma-2 d-flex justify-end">
                     <v-col cols="12" sm="12">
-                        <v-card class="caixaTexto" min-height="200px" max-height="200px">
-                            <v-img src="https://cdn.discordapp.com/attachments/804482043093844018/804887154543034418/bartender_rindo.png" max-height="180" max-width="180"
+                        <v-card class="caixaTexto" min-height="200px" max-height="200px" @click="randomizeInfo()">
+                            <v-img :src="characterImage()" max-height="180" max-width="180"
                             style="position:relative; display:inline-block;top:0;"
                             class="mt-2">
 
@@ -63,14 +60,31 @@ export default {
     data: () => ({
         notificationCelular: false,
         escolhas : ['Por que eu quis', 'Por que eu bebi demais'],
-        textoAtual : 'WOAAAAAAAAAAAAAA'
+        textoAtual : '',
+        bartenderAtual : 'bartender_rindo',
+        sequencia: 0        
     }),
     methods: {
         backgroundImage() {
-            return 'background-image: url(https://cdn.discordapp.com/attachments/804482043093844018/804844809802088478/bar2.png);'
+            return this.$store.getters.getImageByScene()
         },
         changePhoneNotification(){
             this.notificationCelular = ! this.notificationCelular
+        },
+        cellphoneImage(){
+            if (this.notificationCelular){
+                return this.$store.getters.getImageById('icone_celular_notif')
+            }
+            else {
+                return this.$store.getters.getImageById('icone_celular')
+            }
+        },
+        randomizeInfo(){
+            this.sequencia = (this.sequencia % 7) + 1
+            this.textoAtual = this.$store.getters.getDialog(this.$store.state.cena, this.sequencia).text
+        },
+        characterImage() {
+            return this.$store.getters.getImageById(this.bartenderAtual)
         }
     }
 
