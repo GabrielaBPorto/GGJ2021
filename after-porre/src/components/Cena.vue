@@ -19,7 +19,7 @@
                 </v-container>
             </v-row>
             <v-row style="right:0px;min-height:380px;" class="mt-10 pt-10">
-                <v-container fluid class="ma-2 d-flex justify-end" v-for="escolha in escolhas" :key="escolha.id" >
+                <v-container fluid class="ma-2 d-flex justify-end" v-for="escolha in choices" :key="escolha.index" >
                     <v-col cols="12" sm="4">
                         <v-card min-height="100px" class="caixaTexto" tile>
                             <v-card-text>
@@ -95,7 +95,7 @@
 
                                                 <v-list-item-content >
                                                 
-                                                        <v-list-item-text class="mt-2" >{{ item.text }}</v-list-item-text>
+                                                        <span class="mt-2" >{{ item.text }}</span>
                                                         <v-list-item-subtitle class="d-flex justify-end align-end">{{ item.time }}</v-list-item-subtitle>
                                                 </v-list-item-content>
                                             </v-list-item>
@@ -107,7 +107,7 @@
                                             style="background-color:#E3AFFA;border:solid;border-radius:50px"
                                             >
                                                 <v-list-item-content  >
-                                                        <v-list-item-title class="mt-2" >{{ item.text }}</v-list-item-title>
+                                                        <span class="mt-2" >{{ item.text }}</span>
                                                         <v-list-item-subtitle class="d-flex justify-end align-end">{{ item.time }}</v-list-item-subtitle>
                                                 </v-list-item-content>
                                             </v-list-item>
@@ -141,7 +141,7 @@
 export default {
     data: () => ({
         notificationCelular: false,
-        escolhas : [],
+        choices : [],
         textoAtual : '. . .',
         imagemPersonagem : 'transparente',
         sequencia: 0,
@@ -155,8 +155,16 @@ export default {
     }),
     methods: {
         getNextMsg(){
-            this.$store.dispatch('proxMsg')
-            this.messages.push(this.$store.getters.getLastMsg())
+            this.choices = this.$store.getters.getChoice()
+            console.log(this.choices.options)
+            if (this.choices.options == undefined){
+                this.$store.dispatch('proxMsg')
+                let message = this.$store.getters.getLastMsg()
+                this.messages.push(message)
+            }
+            else {
+                this.choices = this.choices.options
+            }
         },
         backgroundImage() {
             return this.$store.getters.getImageByScene()
@@ -196,7 +204,7 @@ export default {
         openPhone(){
             this.phone = !this.phone
             if(this.phone){
-                this.styleBlur = "filter: blur(5px)"
+                this.styleBlur = "filter: blur(10px)"
                 this.imagemPersonagem = 'melhor_amigo'
             }
             else{
@@ -218,8 +226,6 @@ export default {
             }
         },
         checkIfGlassesOnScreen(){
-            console.log(this.glasses)
-            console.log(this.$store.state.cena)
             if(this.glasses && this.$store.state.cena == 1){
                 return true
             }

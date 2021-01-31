@@ -69,7 +69,6 @@ export default {
     },
     getLastMsg: (state) => () => {
         var dialog = state.msgs_vistas.slice(-1)[0]
-
         return dialog
     },
     getCellNotif: (state) => () => {
@@ -90,7 +89,6 @@ export default {
         if (state.cena === 1 && state.dialogo_sequencia === 8 && state.msgs_sequencia === 14){
             choice = state.escolhas.find(escolha => escolha.id === 1)
         }
-
         return choice
     },
     getRandomInterfaceSound: (state) => () => {

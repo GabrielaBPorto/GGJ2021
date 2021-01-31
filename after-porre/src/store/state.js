@@ -221,9 +221,9 @@ export default () => ({
     ],
 
     escolhas: [
-      { id: 1, escolha_1: '"Não acho que eles tem esse drink no cardápio..."', escolha_2: '"Como assim eu sumi? A balada nem é tão grande assim"'},
-      { id: 2, escolha_1: 'Encaro a garota até ela puxar assunto.', escolha_2: '"Hã, com licença moça?"'},
-      { id: 3, escolha_1: '"Na verdade... hoje vou ficar só na água com gás."', escolha_2: '"Acho que eu não deveria... mas vou querer um Soco no Estômago!"'},
+      { id: 1, options: [{index: 1, msg: '"Não acho que eles tem esse drink no cardápio..."'}, {index:2, msg: '"Como assim eu sumi? A balada nem é tão grande assim"'}]},
+      { id: 2, options: [{index: 1 ,msg: 'Encaro a garota até ela puxar assunto.'},{index:2, msg: '"Hã, com licença moça?"'}]},
+      { id: 3, options: [{index: 1 ,msg: '"Na verdade... hoje vou ficar só na água com gás."'}, {index:2, msg: '"Acho que eu não deveria... mas vou querer um Soco no Estômago!"'}]},
 
     ],
 
