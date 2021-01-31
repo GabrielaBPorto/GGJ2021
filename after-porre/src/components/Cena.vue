@@ -16,20 +16,11 @@
                 </v-container>
             </v-row>
             <v-row style="right:0px;" class="mt-10 pt-10" >
-                <v-container fluid class="ma-2 d-flex justify-end">
+                <v-container fluid class="ma-2 d-flex justify-end" v-for="escolha in escolhas" :key="escolha.id">
                     <v-col cols="12" sm="4">
                         <v-card min-height="100px" class="caixaTexto" tile>
                             <v-card-text>
-                                'Por que siiim'
-                            </v-card-text>
-                        </v-card>
-                    </v-col>
-                </v-container>
-                <v-container fluid class="ma-2 d-flex justify-end">
-                    <v-col cols="12" sm="4">
-                        <v-card min-height="100px" class="caixaTexto"  tile>
-                            <v-card-text>
-                                'Por que siiim'
+                                {{ escolha.msg }}
                             </v-card-text>
                         </v-card>
                     </v-col>
@@ -59,11 +50,11 @@
 export default {
     data: () => ({
         notificationCelular: false,
-        escolhas : ['Por que eu quis', 'Por que eu bebi demais'],
+        escolhas : [{id:0, msg:'Por que isso'}, {id:1, msg:'2'}],
         textoAtual : '',
         bartenderAtual : 'bartender_rindo',
         sequencia: 0,
-        dialog: {}        
+        dialog: {}
     }),
     methods: {
         backgroundImage() {
