@@ -8,6 +8,7 @@ export default {
         const payload = { 'inicio': getters.getSceneMusicStart(), 'loop': getters.getSceneMusicLoop()}
         commit('alterarMusica', payload)
         commit('audioPlaying', false)
+        commit('resetSequencias')
     },
 
     rotaCena1 ( {commit, rota} ) {

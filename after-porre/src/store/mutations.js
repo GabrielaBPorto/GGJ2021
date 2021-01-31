@@ -56,6 +56,11 @@ export default {
 
     audioPlaying (state, isPlaying) {
         state.audioIsPlaying = isPlaying
+    },
+
+    resetSequencias (state){
+        state.dialogo_sequencia = 0
+        state.msgs_sequencia = 0
     }
 
 }
