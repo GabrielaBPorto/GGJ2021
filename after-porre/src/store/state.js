@@ -185,4 +185,8 @@ export default () => ({
     audioIsPlaying: false,
     music: Audio,
     effects: Audio,
+    dialogo_sequencia: 0,
+    msgs_sequencia: 0,
+    dialogos_vistos: [],
+    msgs_vistas: []
 })
