@@ -6,9 +6,7 @@
         >
             <v-card max-width="450" class="pa-2" color="cyan">
                 
-                <v-card>
-
-                
+                <v-card color="white">
                     <v-toolbar
                     color="green"
                     dark
@@ -20,50 +18,42 @@
                     <v-spacer></v-spacer>
                         <v-toolbar-title >Melhor amigo</v-toolbar-title>
                     </v-toolbar>
-                    
+                    <v-virtual-scroll
+                        :bench="benched"
+                        :items="msgs"
+                        height="730"
+                        item-height="80"
+                    >
+                        <template v-slot:default="{ item }">
+                            <v-container fluid v-if="!item.sender" :key="item.id" class="my-2 pa-1">
 
-                    <v-list three-line>
-                        <template v-for="(item) in msgs">
-                            <v-container fluid v-if="!item.sender" :key="item.id">
-                                <v-divider
-                                
-                                :inset="item.inset"
-                                ></v-divider>
+                                    <v-list-item
+                                    :key="item.title"
+                                    class="d-flex justify-center"
+                                    style="background-color:yellow;border:solid;border-radius:50px" 
+                                    >
 
-                                <v-list-item
-                                :key="item.title"
-                                class="d-flex justify-center"
-                                style="min-height:88px;background-color:yellow;border:solid;border-radius:50px" 
-                                >
-
-                                    <v-list-item-content >
-                                    
-                                            <v-list-item-title class="mt-2" >{{ item.text }}</v-list-item-title>
-                                            <v-list-item-subtitle class="d-flex justify-end align-end">{{ item.time }}</v-list-item-subtitle>
-                                    </v-list-item-content>
-                                </v-list-item>
-                            </v-container>
-                            <v-container fluid v-if="item.sender" :key="item.id">
-                                <v-divider
-                                
-                                :inset="item.inset"
-                                ></v-divider>
-
-                                <v-list-item
-                                :key="item.title"
-                                class="d-flex justify-center"
-                                style="min-height:88px;background-color:green;border:solid;border-radius:50px"
-                                >
-
-                                    <v-list-item-content  >
-                                    
-                                            <v-list-item-title class="mt-2" >{{ item.text }}</v-list-item-title>
-                                            <v-list-item-subtitle class="d-flex justify-end align-end">{{ item.time }}</v-list-item-subtitle>
-                                    </v-list-item-content>
-                                </v-list-item>
-                            </v-container>
+                                        <v-list-item-content >
+                                        
+                                                <v-list-item-title class="mt-2" >{{ item.text }}</v-list-item-title>
+                                                <v-list-item-subtitle class="d-flex justify-end align-end">{{ item.time }}</v-list-item-subtitle>
+                                        </v-list-item-content>
+                                    </v-list-item>
+                                </v-container>
+                                <v-container fluid v-if="item.sender" :key="item.id" class="my-2 pa-1">
+                                    <v-list-item
+                                    :key="item.title"
+                                    class="d-flex justify-center"
+                                    style="background-color:green;border:solid;border-radius:50px"
+                                    >
+                                        <v-list-item-content  >
+                                                <v-list-item-title class="mt-2" >{{ item.text }}</v-list-item-title>
+                                                <v-list-item-subtitle class="d-flex justify-end align-end">{{ item.time }}</v-list-item-subtitle>
+                                        </v-list-item-content>
+                                    </v-list-item>
+                                </v-container>
                         </template>
-                    </v-list>
+                    </v-virtual-scroll>
                     <v-card>
                         <v-textarea
                             disabled
@@ -96,6 +86,7 @@ export default {
             { cena: 1, msg: 8, chat: 'melhor_amigo', sender: true, time: '17:00', text: 'Não sei como nem quando cheguei'},
             { cena: 1, msg: 9, chat: 'melhor_amigo', sender: true, time: '17:00', text: 'Mas tirando a ressaca eu tô bem, acho'},
             { cena: 1, msg: 10, chat: 'melhor_amigo', sender: true, time: '17:01', text: 'O que foi que aconteceu ontem a noite???'},],
+            benched: 0,
     }),
     methods: {
         characterImage(avatarName) {
