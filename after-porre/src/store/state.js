@@ -157,7 +157,17 @@ export default () => ({
       { cena: 2, sequencia: 23, personagem: 'mc', text: 'Rindo de nervoso, respondo: "Hahaha...."', nome: 'ALEX', imagem: 'transparente'},
       { cena: 2, sequencia: 24, personagem: 'lola', text: '"E ela também chegou a lamber o corrimão da balada HAHAHAHAHA!!!"', nome: 'LOLA AYANAMI', imagem: 'bartender_rindo'},
 
-      //Inserir Cena 2, Escolha 2, Rotas 1 e 2
+      // Cena 2, Escolha 2, Rota 1
+      { cena: 2, sequencia: 25, personagem: 'mc', text: '....', nome: 'ALEX', imagem: 'transparente'},      
+      { cena: 2, sequencia: 26, personagem: 'lola', text: '"Aconteceu alguma coisa?"', nome: 'LOLA AYANAMI', imagem: 'bartender_seria'},
+      { cena: 2, sequencia: 27, personagem: 'mc', text: '"Eu... acho que... eu  era essa pessoa..."', nome: 'ALEX', imagem: 'transparente'},
+      { cena: 2, sequencia: 28, personagem: 'lola', text: '"..."', nome: 'LOLA AYANAMI', imagem: 'bartender_nojo'},
+
+      // Cena 2, Escolha 2, Rota 2
+      { cena: 2, sequencia: 29, personagem: 'mc', text: '"Hahaha... hilário... mas e aí, qual seu nome mesmo?"', nome: 'ALEX', imagem: 'transparente'},            
+      { cena: 2, sequencia: 30, personagem: 'lola', text: '"Lola Ayanami"', nome: 'LOLA AYANAMI', imagem: 'bartender'},
+      { cena: 2, sequencia: 31, personagem: 'mc', text: '"Isso é tipo... seu nome de verdade mesmo?"', nome: 'ALEX', imagem: 'transparente'},      
+      { cena: 2, sequencia: 32, personagem: 'lola', text: '"É artístico."', nome: 'LOLA AYANAMI', imagem: 'bartender_seria'},
     ],
     
     msgs_cel: [
