@@ -6,18 +6,56 @@ export default {
     trocarCena (state) {
         state.cena++
     },
+    
     oculosAntigos (state) {
         state.oculos = 1
     },
+
     oculosNovos (state) {
         state.oculos = 2
     },
-    alterarMusica (state, inicio, loop){
-        state.musica_inicio = inicio;
-        state.musica_loop = loop;
+
+    alterarMusica (state, payload ){
+        state.musica_inicio = payload.inicio;
+        state.musica_loop = payload.loop;
     },
+
     rotaCena1 (state, rota){
         state.rotaCena1 = rota
+    },
+
+    changeMusic (state,  payload){
+        if (state.music.src !== undefined){
+            state.music.load()
+        }
+        state.music = new Audio(payload.inicio)
+        state.music.volume = 0.6
+        state.music.play()
+
+        state.music.addEventListener('ended', () => {
+            console.log('Música original se encerrou')
+            state.music.load()
+            state.music.src = payload.loop
+            state.music.loop = true
+            state.music.play()
+        });
+    },
+    
+    soundEffect (state, efeito) {
+        state.effects = new Audio(efeito)
+        var effectPromise = state.effects.play()
+        if (effectPromise !== undefined) {
+            effectPromise.then(() => {
+                console.log('Tocando efeito: ' + efeito )
+            })
+            effectPromise.catch(error => {
+                console.error('Erro: ' + error)
+            })
+        }
+    },
+
+    audioPlaying (state, isPlaying) {
+        state.audioIsPlaying = isPlaying
     }
 
 }

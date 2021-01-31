@@ -24,28 +24,28 @@ export default {
                 return getters.getImageById('quarto_dia')
         }
     },
-    getSceneMusicStart: (state, getters) => () => {
+    getSceneMusicStart: (state) => () => {
         switch (state.cena) {
             case 0:
-                return getters.getSoundById('inicio_inicio')
+                return 'inicio_inicio'
             case 1:
-                return getters.getSoundById('quarto_inicio')
+                return 'quarto_inicio'
             case 3:
-                return getters.getSoundById('balada_inicio')
+                return 'balada_inicio'
             default:
-                return getters.getSoundById('inicio_inicio')
+                return 'inicio_inicio'
         }
     },
-    getSceneMusicLoop: (state, getters) => () => {
+    getSceneMusicLoop: (state) => () => {
         switch (state.cena) {
             case 0:
-                return getters.getSoundById('inicio_loop')
+                return 'inicio_loop'
             case 1:
-                return getters.getSoundById('quarto_loop')
+                return 'quarto_loop'
             case 3:
-                return getters.getSoundById('balada_loop')
+                return 'balada_loop'
             default:
-                return getters.getSoundById('inicio_loop')
+                return 'inicio_loop'
         }
     },
     getMsgs: (state) => (cena, msg) => {

@@ -5,13 +5,22 @@
 export default {
     trocarCena( { commit, getters }) {
         commit('trocarCena');
-        const inicio = getters.getSceneMusicStart()
-        const loop = getters.getSceneMusicLoop()
-        commit('alterarMusica', inicio, loop)
+        const payload = { 'inicio': getters.getSceneMusicStart(), 'loop': getters.getSceneMusicLoop()}
+        commit('alterarMusica', payload)
+        commit('audioPlaying', false)
     },
+
     rotaCena1 ( {commit, rota} ) {
         commit('rotaCena1', rota)
-    },    
+    },
+    
+    musicStart ( {commit, state, getters }) {
+        if (!state.audioIsPlaying){
+            commit('audioPlaying', true)
+            const payload = { 'inicio': getters.getSoundById(state.musica_inicio), 'loop': getters.getSoundById(state.musica_loop) }
+            commit('changeMusic', payload)
+        }
+    }
 }
   
   

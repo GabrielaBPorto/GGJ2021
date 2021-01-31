@@ -1,5 +1,5 @@
 <template>
-    <v-card class="px-2 d-flex align-end justify-center" :height="heightSize" v-on:click="test()">
+    <v-card class="px-2 d-flex align-end justify-center" :height="heightSize">
         <v-img
             lazy-src="@/assets/images/afterporreTelaInicial.png"
             src="@/assets/images/afterporreTelaInicial.png"
@@ -44,54 +44,20 @@ export default {
     }),
     mounted() {
         this.heightSize = window.innerHeight/2
+        this.pageLoaded()
+    },
+    components: {
     },
     methods: {
         functionsStartButton(){
             this.$store.dispatch('trocarCena')
-            this.playsound(this.$store.getters.getSceneMusicStart());
             this.$router.push('/cena')
+            this.$store.dispatch('musicStart')
         },
 
-        test () {           
-            var sound = new Audio(this.$store.getters.getSceneMusicStart());
-            sound.volume=0.1;
-
-            sound.addEventListener('ended', () => {
-                console.log('Acabou a música')
-                sound = new Audio(this.$store.getters.getSceneMusicLoop())
-                sound.loop = true
-                sound.play()
-            });
-
-            if (!this.audioIsPlaying) {
-                var playPromise = sound.play()
-                if (playPromise !== undefined) {
-                    playPromise.then( () => {
-                    console.log('Música tocando')
-                    this.audioIsPlaying = true
-                    })
-                    .catch(error => {
-                    console.error('Erro: ' + error)
-                    })
-                }
-            }   
-        },
-
-        playsound: function (nomeArquivo) {
-        //const arqBase = this.$store.getters.getSoundById(nomeArquivo)
-        const sound = new Audio(nomeArquivo);
-        var playPromise = sound.play();
-
-        if (playPromise !== undefined) {
-          
-            playPromise.then(response => {
-              console.log('Foi: ' + response)
-            })
-            .catch(error => {
-              console.error('Erro: ' + error)
-            })
-          }
-        }      
+        pageLoaded() {                       
+            this.$store.dispatch('musicStart')
+        },     
     }
 }
 </script>
