@@ -181,5 +181,8 @@ export default () => ({
     cena: 0,
     musica_inicio: 'inicio_inicio',
     musica_loop: 'inicio_loop',
-    cena1_rota: 0
+    cena1_rota: 0,
+    audioIsPlaying: false,
+    music: Audio,
+    effects: Audio,
 })
