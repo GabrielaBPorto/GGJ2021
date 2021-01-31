@@ -7,7 +7,7 @@
               <v-btn v-on:click="playsound('/yoshi-tongue.mp3')">START</v-btn>
           </v-card>
       </v-col>
-    </v-row>
+  </v-row>
   </v-container>  
 </template>
 <script>
