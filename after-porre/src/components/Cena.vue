@@ -1,15 +1,18 @@
 <template>
-    <v-container fluid class="mx-0 pa-0">
+    <v-container fluid class="mx-0 pa-0" :style="styleBlur">
         <v-img id="fundo"
             :lazy-src="backgroundImage()"
             :src="backgroundImage()"
-            style="position:relative; display:inline-block;"
+            :style="checkOculoStyle()"
             ></v-img>
-        <v-container fluid style="position:absolute;top:0px;">
+        <v-container fluid style="position:absolute;top:50%;left:55%;z-index:90" v-if="checkIfGlassesOnScreen()" @click="getGlasses()">
+            <v-img :src="this.$store.getters.getImageById('oculos')" max-height="100" max-width="100"></v-img>
+        </v-container>
+        <v-container fluid style="position:absolute;top:0px;" id="tela">
             <v-row style="right:0px">
                 <v-container fluid class="ma-2 d-flex justify-end">
                     <v-col cols="12" sm="2">
-                        <v-card flat @click="changePhoneNotification()" :ripple="false" id="celular" class="d-flex justify-end" style="background-color: transparent !important;">
+                        <v-card flat @click="openPhone()" :ripple="false" id="celular" class="d-flex justify-end" style="background-color: transparent !important;">
                             <v-img :src="cellphoneImage()" contain max-height="150" max-width="250"></v-img>
                         </v-card>
                     </v-col>
@@ -49,9 +52,91 @@
                 </v-container>
             </v-row>
         </v-container>
+        <v-dialog
+            v-model="phone"
+            fullscreen
+            >
+                <v-container class="mt-0 pt-0">
+                <v-card
+                    max-width="450"
+                    class="mx-auto"
+                >
+                    <v-card max-width="450" class="pa-2" color="cyan">
+                        
+                        <v-card color="#0E1621">
+                            <v-toolbar
+                            color="green"
+                            dark
+                            >
+                                
+                                <v-icon @click="openPhone()" >mdi-keyboard-backspace</v-icon>
+                                <v-avatar>
+                                    <v-img :src="characterImage()"></v-img>
+                                </v-avatar>
+                                <v-spacer></v-spacer>
+                                <v-toolbar-title >Melhor amigo</v-toolbar-title>
+                                <v-spacer></v-spacer>
+                                </v-toolbar>
+                            <v-virtual-scroll
+                                :bench="benched"
+                                :items="messages"
+                                height="730"
+                                item-height="80"
+                                id="scroll"
+                            >
+                                <template v-slot:default="{ item }">
+                                    <v-container fluid v-if="!item.sender" :key="item.id" class="my-2 pa-1">
+
+                                            <v-list-item
+                                            :key="item.title"
+                                            class="d-flex justify-center"
+                                            style="background-color:#FCFCFC;border:solid;border-radius:50px" 
+                                            >
+
+                                                <v-list-item-content >
+                                                
+                                                        <v-list-item-text class="mt-2" >{{ item.text }}</v-list-item-text>
+                                                        <v-list-item-subtitle class="d-flex justify-end align-end">{{ item.time }}</v-list-item-subtitle>
+                                                </v-list-item-content>
+                                            </v-list-item>
+                                        </v-container>
+                                        <v-container fluid v-if="item.sender" :key="item.id" class="my-2 pa-1">
+                                            <v-list-item
+                                            :key="item.title"
+                                            class="d-flex justify-center"
+                                            style="background-color:#E3AFFA;border:solid;border-radius:50px"
+                                            >
+                                                <v-list-item-content  >
+                                                        <v-list-item-title class="mt-2" >{{ item.text }}</v-list-item-title>
+                                                        <v-list-item-subtitle class="d-flex justify-end align-end">{{ item.time }}</v-list-item-subtitle>
+                                                </v-list-item-content>
+                                            </v-list-item>
+                                        </v-container>
+                                </template>
+                            </v-virtual-scroll>
+                            <v-card @click="getNextMsg()">
+                                <v-textarea
+                                    disabled
+                                    class="ma-1 pa-1"
+                                    filled
+                                    dense
+                                    height="40px"
+                                    value=". . ."
+                                    append-icon="mdi-send"
+                                    :ripple="false"
+                                    ></v-textarea>
+                                
+                            </v-card>
+                        </v-card>
+                    </v-card>
+                </v-card>
+            </v-container>
+            
+        </v-dialog>
     </v-container>
 </template>
 <script>
+
 
 export default {
     data: () => ({
@@ -61,9 +146,18 @@ export default {
         imagemPersonagem : 'transparente',
         sequencia: 0,
         dialog: {},
-        nomePersonagem: ''
+        nomePersonagem: '',
+        phone: false,
+        styleBlur: 'filter: blur(0px);',
+        messages : [],
+        benched: 0,
+        glasses: true,
     }),
     methods: {
+        getNextMsg(){
+            this.$store.dispatch('proxMsg')
+            this.messages.push(this.$store.getters.getLastMsg())
+        },
         backgroundImage() {
             return this.$store.getters.getImageByScene()
         },
@@ -77,6 +171,9 @@ export default {
             else {
                 return this.$store.getters.getImageById('icone_celular')
             }
+        },
+        oculosImage(){
+            return this.$store.getters.getImageById('oculos')
         },
         getNextDialog(){
             if (!this.$store.getters.readyNextScene()){
@@ -95,11 +192,40 @@ export default {
         },
         characterImage() {
             return this.$store.getters.getImageById(this.imagemPersonagem)
-        }
-    },
-    mounted() {
-        if(this.escolhas.length > 0){
-            this.disappear = 'visibility:visible;'
+        },
+        openPhone(){
+            this.phone = !this.phone
+            if(this.phone){
+                this.styleBlur = "filter: blur(5px)"
+                this.imagemPersonagem = 'melhor_amigo'
+            }
+            else{
+                this.styleBlur = 'filter: blur(0px);'
+                this.imagemPersonagem = 'transparente'
+            }
+                
+        },
+        getGlasses(){
+            this.$store.state.oculos = 1
+            this.glasses = false
+            this.checkOculoStyle()
+        },
+        checkOculoStyle(){
+            if(this.$store.state.oculos == 0){
+                return "filter: blur(10px);"
+            }else{
+                return "filter: blur(0px);"
+            }
+        },
+        checkIfGlassesOnScreen(){
+            console.log(this.glasses)
+            console.log(this.$store.state.cena)
+            if(this.glasses && this.$store.state.cena == 1){
+                return true
+            }
+            else{
+                return false
+            }
         }
     }
 
@@ -110,6 +236,7 @@ export default {
 #fundo {
     height: 100%;
     width: 100%;
+    position:relative; display:inline-block;
 }
 #teste {
     position: absolute;
@@ -132,4 +259,11 @@ export default {
     left:10%;
     margin-top:15px
 }
+.celular {
+    max-width:250px;
+    max-height:250px;
+    width: auto;
+    height: auto;
+}
+
 </style>
