@@ -34,7 +34,7 @@ export default {
                 commit('notif_celular')
             }
         }
-        if (state.cena === 1 && state.dialogo_sequencia === 8 && state.cena1_rota){
+        if (state.cena === 1 && state.dialogo_sequencia === 8 && state.msgs_sequencia === 31){
             commit('nextDialog')
             dialog = getters.getDialog(state.cena, state.dialogo_sequencia)
             commit('adicionaDialogVisto', dialog)
@@ -44,9 +44,34 @@ export default {
     proxMsg ( {commit, state, getters }){
         var dialog = []
 
-        commit('nextMsg')
-        dialog = getters.getMsgs(state.cena, state.msgs_sequencia)
-        commit('adicionaMsgVista', dialog)
+        if(state.cena === 1 && state.msgs_sequencia < 14 && !state.cena1_rota){
+            commit('nextMsg')
+            dialog = getters.getMsgs(state.cena, state.msgs_sequencia)
+            commit('adicionaMsgVista', dialog)
+        }
+
+        if(state.cena === 1 && state.msgs_sequencia === 14 && state.cena1_rota === 1){
+            commit('setMsgSequence', 15)
+            dialog = getters.getMsgs(state.cena, state.msgs_sequencia)
+            commit('adicionaMsgVista', dialog)
+        }
+
+        if(state.cena === 1 && state.msgs_sequencia === 14 && state.cena1_rota === 2){
+            commit('setMsgSequence', 24)
+            dialog = getters.getMsgs(state.cena, state.msgs_sequencia)
+            commit('adicionaMsgVista', dialog)
+        }
+
+        if(state.cena === 1 && state.msgs_sequencia < 31 && state.cena1_rota > 0){
+            if (state.msgs_sequencia === 23){
+                commit('setMsgSequence', 31)
+            }
+            else{
+                commit('nextMsg')
+            }
+            dialog = getters.getMsgs(state.cena, state.msgs_sequencia)
+            commit('adicionaMsgVista', dialog)
+        }
     }
 }
   
