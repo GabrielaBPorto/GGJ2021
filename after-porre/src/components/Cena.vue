@@ -29,7 +29,7 @@
             <v-row style="right:0px" class="mt-7 pt-7" >
                 <v-container fluid class="ma-2 d-flex justify-end" style="position:relative;">
                     <v-col cols="12" sm="12">
-                        <v-card class="caixaTexto" min-height="200px" max-height="200px" @click="randomizeInfo()" >
+                        <v-card class="caixaTexto" min-height="200px" max-height="200px" @click="getNextDialog()" >
                             <v-img :src="characterImage()" max-height="180" max-width="180"
                             style="position:relative; display:inline-block;top:0;"
                             class="mt-2">
@@ -80,6 +80,11 @@ export default {
         randomizeInfo(){
             this.sequencia = ((this.sequencia % 7) + 1)
             this.dialog = this.$store.getters.getDialog(this.$store.state.cena, this.sequencia)
+            this.textoAtual = this.dialog.text
+        },
+        getNextDialog(){
+            this.$store.dispatch('proxDialog')
+            this.dialog = this.$store.getters.getLastDialog()
             this.textoAtual = this.dialog.text
         },
         characterImage() {

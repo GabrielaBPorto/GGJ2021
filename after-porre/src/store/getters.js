@@ -53,5 +53,11 @@ export default {
     },
     getObjectMsg: (state) => (cena, item) => {
         return state.objetos.find(objeto => objeto.cena === cena & objeto.objeto === item)
+    },
+
+    getLastDialog: (state) => () => {
+        var dialog = state.dialogos_vistos.slice(-1)[0]
+
+        return dialog
     }
 }
