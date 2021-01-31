@@ -115,15 +115,36 @@ export default () => ({
 
     // Diálogos
     dialogs: [
-      { cena: 1, sequencia: 1, personagem: 'narrador', text: 'Você acorda grunhindo em sua cama, olhos sensíveis a pouca luz do Sol entrando no quarto.', nome: '', imagem: 'transparente'},
-      { cena: 1, sequencia: 2, personagem: 'mc', text: 'Uuuugggghhh... que dor de cabeça... será que alguém anotou a placa do ônibus que me atropelou?', nome: 'Alex', imagem: 'transparente'},
-      { cena: 1, sequencia: 3, personagem: 'mc', text: 'A propósito, como será que eu cheguei em casa?', nome: 'Alex', imagem: 'transparente'},
-      { cena: 1, sequencia: 4, personagem: 'narrador', text: 'Você coloca as mãos na cabeça, massageando suas tempôras para fazer passar a dor.', nome: '', imagem: 'transparente'},
-      { cena: 1, sequencia: 5, personagem: 'mc', text: 'Não consigo lembrar de nada que aconteceu ontem a noite... e já é tarde, mal entra luz pela janela...', nome: 'Alex', imagem: 'transparente'},     
-      { cena: 1, sequencia: 6, personagem: 'mc', text: 'Preciso achar meus óculos, não estou enxergando nada.', nome: 'Alex', imagem: 'transparente'},
-      { cena: 1, sequencia: 7, personagem: 'mc', text: 'Droga, se esse é meu óculos antigo, onde será que está o novo? Bom, melhor que nada.', nome: 'Alex', imagem: 'transparente'},      
-      { cena: 1, sequencia: 8, personagem: 'mc', text: 'Quantas mensagens não lidas...', nome: 'Alex', imagem: 'transparente'},
-      { cena: 1, sequencia: 9, personagem: 'mc', text: 'Cadê minha carteira? Melhor ir atrás de tudo que perdi.', nome: 'Alex', imagem: 'transparente'},
+      { cena: 1, sequencia: 1, personagem: 'mc', text: 'Acordo grunhindo em minha cama, olhos sensíveis a pouca luz do Sol entrando no quarto.', nome: 'ALEX', imagem: 'transparente'},
+      { cena: 1, sequencia: 2, personagem: 'mc', text: '"Uuuugggghhh... que dor de cabeça... será que alguém anotou a placa do ônibus que me atropelou?"', nome: 'ALEX', imagem: 'transparente'},
+      { cena: 1, sequencia: 3, personagem: 'mc', text: '"A propósito, como será que eu cheguei em casa?"', nome: 'ALEX', imagem: 'transparente'},
+      { cena: 1, sequencia: 4, personagem: 'mc', text: 'Coloco as mãos na cabeça, massageando minhas têmporas para fazer passar a dor.', nome: 'ALEX', imagem: 'transparente'},
+      { cena: 1, sequencia: 5, personagem: 'mc', text: '"Não consigo lembrar de nada que aconteceu ontem a noite... e já é tarde, mal entra luz pela janela..."', nome: 'ALEX', imagem: 'transparente'},     
+      { cena: 1, sequencia: 6, personagem: 'mc', text: '"Preciso achar meus óculos, não estou enxergando nada."', nome: 'ALEX', imagem: 'transparente'},
+      { cena: 1, sequencia: 7, personagem: 'mc', text: '"Droga, se esse é meu óculos antigo, onde será que está o novo? Bom, melhor que nada."', nome: 'ALEX', imagem: 'transparente'},      
+      { cena: 1, sequencia: 8, personagem: 'mc', text: '"Quantas mensagens não lidas..."', nome: 'ALEX', imagem: 'transparente'},
+      { cena: 1, sequencia: 9, personagem: 'mc', text: '"Além da carteira e dos meus óculos, espero encontrar minha dignidade no Velvet também..."', nome: 'ALEX', imagem: 'transparente'},
+
+      { cena: 2, sequencia: 1, personagem: 'mc', text: 'Depois de conversar com Túlio, me dirijo para a Velvet.', nome: 'ALEX', imagem: 'transparente'},
+      { cena: 2, sequencia: 2, personagem: 'mc', text: 'O motorista me olha de um jeito esquisito quando peço informações, antes de checar suas coisas', nome: 'ALEX', imagem: 'transparente'},
+      { cena: 2, sequencia: 3, personagem: 'mc', text: 'Ele me mostra minha carteira, dizendo que foi encontrada no chão do banheiro por outra pessoa.', nome: 'ALEX', imagem: 'transparente'},
+      { cena: 2, sequencia: 4, personagem: 'mc', text: 'Também me disse que eu passei MUITO mal ontem no banheiro... que vergonha.', nome: '', imagem: 'transparente'},      
+      { cena: 2, sequencia: 5, personagem: 'mc', text: 'Mas pelo lado bom, recuperei minha carteira - vamos ver o que mais encontro por aqui.', nome: 'ALEX', imagem: 'transparente'},     
+      { cena: 2, sequencia: 6, personagem: 'mc', text: 'Me aproximo do balcão, atendido por uma moça de cabelos azuis e orelhas de... coelhinho?.', nome: 'ALEX', imagem: 'transparente'},
+      
+      { cena: 2, sequencia: 7, personagem: 'mc', text: 'Encaro a garota até ela puxar assunto.', nome: 'ALEX', imagem: 'transparente'},      
+      { cena: 2, sequencia: 8, personagem: 'mc', text: '"Hã, com licença moça?"', nome: 'ALEX', imagem: 'transparente'},
+      { cena: 2, sequencia: 9, personagem: 'mc', text: '"Boa noite! Chegou cedo hoje hein? A festa mal começou ainda hahaha."', nome: 'LOLA AYANAM', imagem: 'bartender_feliz'},
+      { cena: 2, sequencia: 10, personagem: 'mc', text: '"Quer pedir algum drink? O especial da noite é o Soco no Estômago!"', nome: 'LOLA AYANAM', imagem: 'bartender_feliz'},
+      { cena: 2, sequencia: 11, personagem: 'mc', text: '"É uma mistura de vodka, refrigerante de guaraná e chocolate branco."', nome: 'LOLA AYANAM', imagem: 'bartender_feliz'},
+
+      // Cena 2 Rota 2 - Bad End
+      { cena: 2, sequencia: 12, personagem: 'mc', text: '"Acho que eu não deveria... mas vou querer um Soco no Estômago!"', nome: 'ALEX', imagem: 'transparente'},
+      { cena: 2, sequencia: 13, personagem: 'mc', text: '"Você bebeu demais, outra vez."', nome: 'BAD ENDING', imagem: 'transparente'},
+
+      // Cena 2, Rota 1
+      { cena: 2, sequencia: 14, personagem: 'mc', text: '"Na verdade... hoje vou ficar só na água com gás."', nome: 'ALEX', imagem: 'transparente'},
+
     ],
     
     msgs_cel: [
@@ -170,14 +191,17 @@ export default () => ({
     ],
 
     objetos: [
-      { cena: 1, objeto: 'celular', text: 'É, sem meus óculos não vou conseguir ler nada...', nome: 'Alex', imagem: 'oculos'},
-      { cena: 1, objeto: 'cueca_blur', text: 'O que diabos será que é isso?', nome: 'Alex', imagem: 'transparente'},
-      { cena: 1, objeto: 'cueca', text: '.... de quem é essa cueca e como ela veio parar aqui?', nome: 'Alex', imagem: 'cueca'},
-      { cena: 1, objeto: 'remedio', text: 'Espero que isso pare minha tontura.', nome: 'Alex', imagem: 'remedio'}
+      { cena: 1, objeto: 'celular', text: 'É, sem meus óculos não vou conseguir ler nada...', nome: 'ALEX', imagem: 'oculos'},
+      { cena: 1, objeto: 'cueca_blur', text: 'O que diabos será que é isso?', nome: 'ALEX', imagem: 'transparente'},
+      { cena: 1, objeto: 'cueca', text: '.... de quem é essa cueca e como ela veio parar aqui?', nome: 'ALEX', imagem: 'cueca'},
+      { cena: 1, objeto: 'remedio', text: 'Espero que isso pare minha tontura.', nome: 'ALEX', imagem: 'remedio'}
     ],
 
     escolhas: [
-      { id: 1, escolha_1: 'Não acho que eles tem esse drink no cardápio...', escolha_2: 'Como assim eu sumi? A balada nem é tão grande assim'}
+      { id: 1, escolha_1: '"Não acho que eles tem esse drink no cardápio..."', escolha_2: '"Como assim eu sumi? A balada nem é tão grande assim"'},
+      { id: 2, escolha_1: 'Encaro a garota até ela puxar assunto.', escolha_2: '"Hã, com licença moça?"'},
+      { id: 3, escolha_1: '"Na verdade... hoje vou ficar só na água com gás."', escolha_2: '"Acho que eu não deveria... mas vou querer um Soco no Estômago!"'},
+
     ],
 
     // Estados Internos do Jogo

@@ -33,7 +33,7 @@ export default {
     proxDialogCena1 ( { commit, state, getters }){
         var dialog = []        
 
-        if (state.cena === 1 && state.dialogo_sequencia < 7 && state.oculos === 0){
+        if (state.cena === 1 && state.dialogo_sequencia < 6 && state.oculos === 0){
             commit('nextDialog')
             dialog = getters.getDialog(state.cena, state.dialogo_sequencia)
             commit('adicionaDialogVisto', dialog)
