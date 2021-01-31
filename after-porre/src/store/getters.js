@@ -78,7 +78,7 @@ export default {
     readyNextScene: (state) => () => {
         var ready = false
 
-        if (state.cena === 1 && state.dialogo_sequencia === 9 && state.msgs_sequencia === 31){
+        if (state.cena === 1 && state.dialogo_sequencia === 9 && state.msgs_sequencia === 33){
             ready = true
         }
 
