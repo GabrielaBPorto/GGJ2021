@@ -13,6 +13,7 @@ export default {
 
     rotaCena1 ( {commit}, rota ) {
         commit('rotaCena1', rota)
+        commit('notif_celular')
     },
     
     musicStart ( {commit, state, getters }) {
@@ -83,14 +84,12 @@ export default {
             commit('setMsgsSequence', 15)
             dialog = getters.getMsgs(state.cena, state.msgs_sequencia)
             commit('adicionaMsgVista', dialog)
-            commit('notif_celular')
         }
 
         if(state.cena === 1 && state.msgs_sequencia === 14 && state.rotaCena1 === 2){
             commit('setMsgsSequence', 24)
             dialog = getters.getMsgs(state.cena, state.msgs_sequencia)
             commit('adicionaMsgVista', dialog)
-            commit('notif_celular')
         }
 
         if(state.cena === 1 && state.msgs_sequencia < 33 && state.rotaCena1 > 0){
@@ -102,6 +101,7 @@ export default {
             }
             dialog = getters.getMsgs(state.cena, state.msgs_sequencia)
             commit('adicionaMsgVista', dialog)
+
             if (state.msgs_sequencia === 33){
                 commit('notif_celular')
             }
