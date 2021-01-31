@@ -61,6 +61,22 @@ export default {
     resetSequencias (state){
         state.dialogo_sequencia = 0
         state.msgs_sequencia = 0
+    },
+
+    adicionaDialogVisto (state, dialog){
+        state.dialogos_vistos.push(dialog)
+    },
+
+    adicionaMsgVista (state, msg){
+        state.msgs_vistos.push(msg)
+    },
+
+    nextDialog (state){
+        state.dialogo_sequencia++
+    },
+
+    nextMsg (state){
+        state.msgs_sequencia++
     }
 
 }
