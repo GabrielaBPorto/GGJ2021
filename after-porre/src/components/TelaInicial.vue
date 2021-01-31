@@ -16,9 +16,6 @@ export default {
     components:{
         TituloInicial
     },
-    mounted (){
-        console.log(this.$store.state.valor)
-    },
     methods: {
       playsound: function (nomeArquivo) {
         const arqBase = require(`@/assets${nomeArquivo}`)
@@ -47,8 +44,8 @@ export default {
           }
         }
       },
-mounted: {
-this:"playsound('/Inicio_full.mp3')",
-}
+    mounted: {
+    this:"playsound('/Inicio_full.mp3')",
+    }
   }
 </script>
