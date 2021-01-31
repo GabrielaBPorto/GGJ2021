@@ -118,8 +118,8 @@ export default {
             else{
                 this.styleBlur = 'filter: blur(0px);'
         }
-    },
-
+    }
+    }
   }
 </script>
 <style>
