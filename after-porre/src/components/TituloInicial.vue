@@ -1,5 +1,5 @@
 <template>
-    <v-card class="px-2 d-flex align-end justify-center" :height="heightSize" flat>
+    <v-card class="px-2 d-flex align-end justify-center" :height="heightSize" v-on:click="test()">
         <v-img
             lazy-src="@/assets/images/afterporreTelaInicial.png"
             src="@/assets/images/afterporreTelaInicial.png"
@@ -50,6 +50,31 @@ export default {
             this.$store.dispatch('trocarCena')
             this.playsound(this.$store.getters.getSceneMusicStart());
             this.$router.push('/cena')
+        },
+
+        test () {           
+            var sound = new Audio(this.$store.getters.getSceneMusicStart());
+            sound.volume=0.1;
+
+            sound.addEventListener('ended', () => {
+                console.log('Acabou a música')
+                sound = new Audio(this.$store.getters.getSceneMusicLoop())
+                sound.loop = true
+                sound.play()
+            });
+
+            if (!this.audioIsPlaying) {
+                var playPromise = sound.play()
+                if (playPromise !== undefined) {
+                    playPromise.then( () => {
+                    console.log('Música tocando')
+                    this.audioIsPlaying = true
+                    })
+                    .catch(error => {
+                    console.error('Erro: ' + error)
+                    })
+                }
+            }   
         },
 
         playsound: function (nomeArquivo) {

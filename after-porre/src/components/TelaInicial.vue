@@ -18,7 +18,28 @@ export default {
     },
     methods: {
       soundStart(){
-        
+          var sound = new Audio(this.$store.getters.getSceneMusicStart());
+          sound.volume=0.1;
+
+          sound.addEventListener('ended', () => {
+              console.log('Acabou a música')
+              sound = new Audio(this.$store.getters.getSceneMusicLoop())
+              sound.loop = true
+              sound.play()
+          });
+
+          if (!this.audioIsPlaying) {
+              var playPromise = sound.play()
+              if (playPromise !== undefined) {
+                  playPromise.then( () => {
+                  console.log('Música tocando')
+                  this.audioIsPlaying = true
+                  })
+                  .catch(error => {
+                  console.error('Erro: ' + error)
+                  })
+              }
+          }
       },
 
       playsound (nomeArquivo) {
@@ -46,7 +67,7 @@ export default {
       }
     },
     mounted: {
-    this:"playsound('/Inicio_full.mp3')",
+      this:"playsound('/Inicio_full.mp3')",
     }
   }
 </script>
