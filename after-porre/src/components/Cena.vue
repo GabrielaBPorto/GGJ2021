@@ -53,14 +53,87 @@
             v-model="phone"
             fullscreen
             >
-            <Celular />
+                <v-container class="mt-0 pt-0">
+                <v-card
+                    max-width="450"
+                    class="mx-auto"
+                >
+                    <v-card max-width="450" class="pa-2" color="cyan">
+                        
+                        <v-card color="#0E1621">
+                            <v-toolbar
+                            color="green"
+                            dark
+                            >
+                                
+                                <v-icon @click="openPhone()" >mdi-keyboard-backspace</v-icon>
+                                <v-avatar>
+                                    <v-img :src="characterImage()"></v-img>
+                                </v-avatar>
+                                <v-spacer></v-spacer>
+                                <v-toolbar-title >Melhor amigo</v-toolbar-title>
+                                <v-spacer></v-spacer>
+                                </v-toolbar>
+                            <v-virtual-scroll
+                                :bench="benched"
+                                :items="messages"
+                                height="730"
+                                item-height="80"
+                                id="scroll"
+                            >
+                                <template v-slot:default="{ item }">
+                                    <v-container fluid v-if="!item.sender" :key="item.id" class="my-2 pa-1">
+
+                                            <v-list-item
+                                            :key="item.title"
+                                            class="d-flex justify-center"
+                                            style="background-color:#FCFCFC;border:solid;border-radius:50px" 
+                                            >
+
+                                                <v-list-item-content >
+                                                
+                                                        <v-list-item-text class="mt-2" >{{ item.text }}</v-list-item-text>
+                                                        <v-list-item-subtitle class="d-flex justify-end align-end">{{ item.time }}</v-list-item-subtitle>
+                                                </v-list-item-content>
+                                            </v-list-item>
+                                        </v-container>
+                                        <v-container fluid v-if="item.sender" :key="item.id" class="my-2 pa-1">
+                                            <v-list-item
+                                            :key="item.title"
+                                            class="d-flex justify-center"
+                                            style="background-color:#E3AFFA;border:solid;border-radius:50px"
+                                            >
+                                                <v-list-item-content  >
+                                                        <v-list-item-title class="mt-2" >{{ item.text }}</v-list-item-title>
+                                                        <v-list-item-subtitle class="d-flex justify-end align-end">{{ item.time }}</v-list-item-subtitle>
+                                                </v-list-item-content>
+                                            </v-list-item>
+                                        </v-container>
+                                </template>
+                            </v-virtual-scroll>
+                            <v-card @click="getNextMsg()">
+                                <v-textarea
+                                    disabled
+                                    class="ma-1 pa-1"
+                                    filled
+                                    dense
+                                    height="40px"
+                                    value=". . ."
+                                    append-icon="mdi-send"
+                                    :ripple="false"
+                                    ></v-textarea>
+                                
+                            </v-card>
+                        </v-card>
+                    </v-card>
+                </v-card>
+            </v-container>
             
         </v-dialog>
     </v-container>
 </template>
 <script>
 
-import Celular from "@/components/Celular"
 
 export default {
     data: () => ({
@@ -71,13 +144,16 @@ export default {
         sequencia: 0,
         dialog: {},
         nomePersonagem: '',
-        phone: true,
-        styleBlur: 'filter: blur(5px);'
+        phone: false,
+        styleBlur: 'filter: blur(0px);',
+        messages : [],
+        benched: 0,
     }),
-    components: {
-        Celular
-    },
     methods: {
+        getNextMsg(){
+            this.$store.dispatch('proxMsg')
+            this.messages.push(this.$store.getters.getLastMsg())
+        },
         backgroundImage() {
             return this.$store.getters.getImageByScene()
         },
@@ -111,12 +187,16 @@ export default {
             return this.$store.getters.getImageById(this.imagemPersonagem)
         },
         openPhone(){
-            this.dialog = !this.dialog
-            if(this.dialog){
+            this.phone = !this.phone
+            if(this.phone){
                 this.styleBlur = "filter: blur(5px)"
+                this.imagemPersonagem = 'melhor_amigo'
             }
             else{
                 this.styleBlur = 'filter: blur(0px);'
+                this.imagemPersonagem = 'transparente'
+
+                
         }
     }
     }
