@@ -33,7 +33,7 @@ export default {
     proxDialogCena1 ( { commit, state, getters }){
         var dialog = []        
 
-        if (state.cena === 1 && state.dialogo_sequencia < 8 && !state.cena1_rota){
+        if (state.cena === 1 && state.dialogo_sequencia < 7 && state.oculos === 0){
             commit('nextDialog')
             dialog = getters.getDialog(state.cena, state.dialogo_sequencia)
             commit('adicionaDialogVisto', dialog)
@@ -42,7 +42,16 @@ export default {
                 commit('soundEffect', getters.getSoundById('notif_celular'))
             }
         }
-        if (state.cena === 1 && state.dialogo_sequencia === 8 && state.msgs_sequencia === 31){
+        if (state.cena === 1 && state.dialogo_sequencia < 8 && state.oculos > 0 && !state.cena1_rota){
+            commit('nextDialog')
+            dialog = getters.getDialog(state.cena, state.dialogo_sequencia)
+            commit('adicionaDialogVisto', dialog)
+            if (state.dialogo_sequencia === 8){
+                commit('notif_celular')
+                commit('soundEffect', getters.getSoundById('notif_celular'))
+            }
+        }
+        if (state.cena === 1 && state.dialogo_sequencia === 8 && state.msgs_sequencia === 33){
             commit('nextDialog')
             dialog = getters.getDialog(state.cena, state.dialogo_sequencia)
             commit('adicionaDialogVisto', dialog)
@@ -79,7 +88,7 @@ export default {
             commit('adicionaMsgVista', dialog)
         }
 
-        if(state.cena === 1 && state.msgs_sequencia < 31 && state.cena1_rota > 0){
+        if(state.cena === 1 && state.msgs_sequencia < 33 && state.cena1_rota > 0){
             if (state.msgs_sequencia === 23){
                 commit('setMsgSequence', 31)
             }
@@ -88,7 +97,7 @@ export default {
             }
             dialog = getters.getMsgs(state.cena, state.msgs_sequencia)
             commit('adicionaMsgVista', dialog)
-            if (state.msgs_sequencia === 31){
+            if (state.msgs_sequencia === 33){
                 commit('notif_celular')
             }
         }

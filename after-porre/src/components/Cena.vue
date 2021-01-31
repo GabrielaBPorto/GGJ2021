@@ -42,7 +42,7 @@
                     <v-col cols="12" sm="2" style="position:absolute;top:-10%;left:10%">
                         <v-card class="caixaTexto" style="background: rgba(0, 0, 0, 1) !important;">
                             <v-card-text>
-                                LOLA AYANAMI
+                                {{ this.nomePersonagem }}
                             </v-card-text>
                         </v-card>
                     </v-col>
@@ -58,9 +58,10 @@ export default {
         notificationCelular: false,
         escolhas : [],
         textoAtual : '. . .',
-        bartenderAtual : 'bartender_rindo',
+        imagemPersonagem : 'transparente',
         sequencia: 0,
         dialog: {},
+        nomePersonagem: ''
     }),
     methods: {
         backgroundImage() {
@@ -83,6 +84,8 @@ export default {
                 this.dialog = this.$store.getters.getLastDialog()
                 this.textoAtual = this.dialog.text
                 this.notificationCelular = this.$store.getters.getCellNotif()
+                this.nomePersonagem = this.dialog.nome
+                this.imagemPersonagem = this.dialog.imagem
             }
             else {
                 this.$store.dispatch('trocarCena')
@@ -91,7 +94,7 @@ export default {
             }
         },
         characterImage() {
-            return this.$store.getters.getImageById(this.bartenderAtual)
+            return this.$store.getters.getImageById(this.imagemPersonagem)
         }
     },
     mounted() {
