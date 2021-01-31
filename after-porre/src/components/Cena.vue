@@ -1,15 +1,15 @@
 <template>
-    <v-container fluid class="mx-0 pa-0">
+    <v-container fluid class="mx-0 pa-0" :style="styleBlur">
         <v-img id="fundo"
             :lazy-src="backgroundImage()"
             :src="backgroundImage()"
             style="position:relative; display:inline-block;"
             ></v-img>
-        <v-container fluid style="position:absolute;top:0px;">
+        <v-container fluid style="position:absolute;top:0px;" id="tela">
             <v-row style="right:0px">
                 <v-container fluid class="ma-2 d-flex justify-end">
                     <v-col cols="12" sm="2">
-                        <v-card flat @click="changePhoneNotification()" :ripple="false" id="celular" class="d-flex justify-end" style="background-color: transparent !important;">
+                        <v-card flat @click="openPhone()" :ripple="false" id="celular" class="d-flex justify-end" style="background-color: transparent !important;">
                             <v-img :src="cellphoneImage()" contain max-height="150" max-width="250"></v-img>
                         </v-card>
                     </v-col>
@@ -49,9 +49,18 @@
                 </v-container>
             </v-row>
         </v-container>
+        <v-dialog
+            v-model="phone"
+            fullscreen
+            >
+            <Celular />
+            
+        </v-dialog>
     </v-container>
 </template>
 <script>
+
+import Celular from "@/components/Celular"
 
 export default {
     data: () => ({
@@ -61,8 +70,13 @@ export default {
         imagemPersonagem : 'transparente',
         sequencia: 0,
         dialog: {},
-        nomePersonagem: ''
+        nomePersonagem: '',
+        phone: true,
+        styleBlur: 'filter: blur(5px);'
     }),
+    components: {
+        Celular
+    },
     methods: {
         backgroundImage() {
             return this.$store.getters.getImageByScene()
@@ -95,13 +109,16 @@ export default {
         },
         characterImage() {
             return this.$store.getters.getImageById(this.imagemPersonagem)
+        },
+        openPhone(){
+            this.dialog = !this.dialog
+            if(this.dialog){
+                this.styleBlur = "filter: blur(5px)"
+            }
+            else{
+                this.styleBlur = 'filter: blur(0px);'
         }
     },
-    mounted() {
-        if(this.escolhas.length > 0){
-            this.disappear = 'visibility:visible;'
-        }
-    }
 
   }
 </script>
@@ -132,4 +149,11 @@ export default {
     left:10%;
     margin-top:15px
 }
+.celular {
+    max-width:250px;
+    max-height:250px;
+    width: auto;
+    height: auto;
+}
+
 </style>
