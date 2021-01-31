@@ -1,5 +1,5 @@
 <template>
-    <v-container fluid @click="playsound('/Inicio_full.mp3')"> 
+    <v-container fluid> 
         <v-row justify="center" align="end">
             <v-col cols="12" sm="6" justify="center" align="end">
                 <TituloInicial />
@@ -11,39 +11,40 @@
 import TituloInicial from './TituloInicial';
 export default {
     data: () => ({
-        audioIsPlaying:false,
+        audioIsPlaying: false,
     }),
     components:{
         TituloInicial
     },
     methods: {
-      playsound: function (nomeArquivo) {
+      soundStart(){
+        
+      },
+
+      playsound (nomeArquivo) {
         const arqBase = require(`@/assets${nomeArquivo}`)
         const sound = new Audio(arqBase);
         sound.volume=0.1;
-        sound.loop=true;
 
         sound.addEventListener('ended', () => {
-          this.audioIsPlaying=false,
-          console.log("audioIsPlaying: " + this.audioIsPlaying);
+        this.audioIsPlaying=false,
+        console.log("audioIsPlaying: " + this.audioIsPlaying);
         });
-        
+
         if (!this.audioIsPlaying) {
-          var playPromise = sound.play();
+          var playPromise = sound.play()
           if (playPromise !== undefined) {
-            
-              playPromise.then(response => {
-                console.log('Foi: ' + response);
-                this.audioIsPlaying=true;
-                console.log("audioIsPlaying: " + this.audioIsPlaying)
-              })
-              .catch(error => {
-                console.error('Erro: ' + error)
-              })
-            }
+            playPromise.then( () => {
+              console.log('Música tocando')
+              this.audioIsPlaying = true
+            })
+            .catch(error => {
+              console.error('Erro: ' + error)
+            })
           }
         }
-      },
+      }
+    },
     mounted: {
     this:"playsound('/Inicio_full.mp3')",
     }
