@@ -7,8 +7,8 @@
             ></v-img>
             -
         <v-img
-            lazy-src="https://cdn.discordapp.com/attachments/804368222953537627/805287761325981696/personagens3.png"
-            src="https://cdn.discordapp.com/attachments/804368222953537627/805287761325981696/personagens3.png"
+            lazy-src="@/assets/images/afterporreTelaInicialPersonagem.png"
+            src="@/assets/images/afterporreTelaInicialPersonagem.png"
             style="position:absolute;top:35%;z-index:1"> </v-img>
         <v-row style="position:absolute;top:45%">
             <v-container style="border:solid;border-color:#a7e5fb;">
