@@ -81,6 +81,7 @@ export default {
             this.$store.dispatch('proxDialog')
             this.dialog = this.$store.getters.getLastDialog()
             this.textoAtual = this.dialog.text
+            this.notificationCelular = this.$store.getters.getCellNotif()
         },
         characterImage() {
             return this.$store.getters.getImageById(this.bartenderAtual)
