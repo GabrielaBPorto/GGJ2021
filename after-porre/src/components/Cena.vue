@@ -3,8 +3,11 @@
         <v-img id="fundo"
             :lazy-src="backgroundImage()"
             :src="backgroundImage()"
-            style="position:relative; display:inline-block;"
+            :style="checkOculoStyle()"
             ></v-img>
+        <v-container fluid style="position:absolute;top:50%;left:55%;z-index:90" v-if="checkIfGlassesOnScreen()" @click="getGlasses()">
+            <v-img :src="this.$store.getters.getImageById('oculos')" max-height="100" max-width="100"></v-img>
+        </v-container>
         <v-container fluid style="position:absolute;top:0px;" id="tela">
             <v-row style="right:0px">
                 <v-container fluid class="ma-2 d-flex justify-end">
@@ -148,6 +151,7 @@ export default {
         styleBlur: 'filter: blur(0px);',
         messages : [],
         benched: 0,
+        glasses: true,
     }),
     methods: {
         getNextMsg(){
@@ -167,6 +171,9 @@ export default {
             else {
                 return this.$store.getters.getImageById('icone_celular')
             }
+        },
+        oculosImage(){
+            return this.$store.getters.getImageById('oculos')
         },
         getNextDialog(){
             if (!this.$store.getters.readyNextScene()){
@@ -195,11 +202,33 @@ export default {
             else{
                 this.styleBlur = 'filter: blur(0px);'
                 this.imagemPersonagem = 'transparente'
-
+            }
                 
+        },
+        getGlasses(){
+            this.$store.state.oculos = 1
+            this.glasses = false
+            this.checkOculoStyle()
+        },
+        checkOculoStyle(){
+            if(this.$store.state.oculos == 0){
+                return "filter: blur(10px);"
+            }else{
+                return "filter: blur(0px);"
+            }
+        },
+        checkIfGlassesOnScreen(){
+            console.log(this.glasses)
+            console.log(this.$store.state.cena)
+            if(this.glasses && this.$store.state.cena == 1){
+                return true
+            }
+            else{
+                return false
+            }
         }
     }
-    }
+
   }
 </script>
 <style>
@@ -207,6 +236,7 @@ export default {
 #fundo {
     height: 100%;
     width: 100%;
+    position:relative; display:inline-block;
 }
 #teste {
     position: absolute;
