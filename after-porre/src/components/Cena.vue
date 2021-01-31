@@ -74,7 +74,7 @@
                                     <v-img :src="characterImage()"></v-img>
                                 </v-avatar>
                                 <v-spacer></v-spacer>
-                                <v-toolbar-title >Melhor amigo</v-toolbar-title>
+                                <v-toolbar-title >Tulio Jorge (DESEMPREGADO)</v-toolbar-title>
                                 <v-spacer></v-spacer>
                                 </v-toolbar>
                             <v-virtual-scroll
