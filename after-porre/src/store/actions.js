@@ -21,6 +21,18 @@ export default {
             const payload = { 'inicio': getters.getSoundById(state.musica_inicio), 'loop': getters.getSoundById(state.musica_loop) }
             commit('changeMusic', payload)
         }
+    },
+
+    proxDialog ( {commit, state, getters }){
+        commit('nextDialog')
+        var dialog = getters.getDialog(state.cena, state.dialogo_sequencia)
+        commit('adicionaDialogVisto', dialog)
+    },
+
+    proxMsg ( {commit, state, getters }){
+        commit('nextMsg')
+        var dialog = getters.getMsgs(state.cena, state.msgs_sequencia)
+        commit('adicionaMsgVista', dialog)
     }
 }
   
