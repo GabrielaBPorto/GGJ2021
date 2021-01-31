@@ -27,16 +27,22 @@
                 </v-container>
             </v-row>
             <v-row style="right:0px" class="mt-7 pt-7" >
-                <v-container fluid class="ma-2 d-flex justify-end">
+                <v-container fluid class="ma-2 d-flex justify-end" style="position:relative;">
                     <v-col cols="12" sm="12">
-                        <v-card class="caixaTexto" min-height="200px" max-height="200px" @click="randomizeInfo()">
+                        <v-card class="caixaTexto" min-height="200px" max-height="200px" @click="randomizeInfo()" >
                             <v-img :src="characterImage()" max-height="180" max-width="180"
                             style="position:relative; display:inline-block;top:0;"
                             class="mt-2">
-
                             </v-img>
-                            <v-card-text id="dialogo" style="position:absolute;top:0;left: 10%">
+                            <v-card-text id="dialogo">
                                 {{ this.textoAtual }}
+                            </v-card-text>
+                        </v-card>
+                    </v-col>
+                    <v-col cols="12" sm="2" style="position:absolute;top:-10%;left:10%">
+                        <v-card class="caixaTexto" style="background: rgba(0, 0, 0, 1) !important;">
+                            <v-card-text>
+                                LOLA AYANAMI
                             </v-card-text>
                         </v-card>
                     </v-col>
@@ -50,12 +56,11 @@
 export default {
     data: () => ({
         notificationCelular: false,
-        escolhas : [{id: 1, msg: 'ola'}, {id: 2, msg:'bleh'}],
-        textoAtual : '',
+        escolhas : [],
+        textoAtual : '. . .',
         bartenderAtual : 'bartender_rindo',
         sequencia: 0,
         dialog: {},
-        disappear: '',
     }),
     methods: {
         backgroundImage() {
@@ -111,5 +116,9 @@ export default {
 #dialogo{
     font-size: 30px !important;
     -webkit-text-stroke: 0.5px black;
+    position:absolute;
+    top:0;
+    left:10%;
+    margin-top:15px
 }
 </style>
