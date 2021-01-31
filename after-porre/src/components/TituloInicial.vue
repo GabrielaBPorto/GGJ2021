@@ -28,7 +28,7 @@
                     <v-spacer class="mt-4"></v-spacer>
                     <v-col cols="12" sm="12" class="mt-5">
                         <v-card flat class="d-flex justify-center" >
-                            <v-btn id="botaoStart" outlined flat x-large v-on:click="functionsStartButton()">START</v-btn>
+                            <v-btn id="botaoStart" outlined flat x-large @click="functionsStartButton()">START</v-btn>
                         </v-card>
                     </v-col>
                 </v-row>
@@ -50,6 +50,7 @@ export default {
     },
     methods: {
         functionsStartButton(){
+            console.log('meow')
             this.$store.dispatch('trocarCena')
             this.$router.push('/cena')
             this.$store.dispatch('musicStart')
@@ -94,6 +95,7 @@ export default {
 #botaoStart{
     min-height: 84px;
     border-color: #8ef4c0;
+    z-index:10;
 }
 
 #botaoStart span{
