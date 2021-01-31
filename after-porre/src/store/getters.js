@@ -49,7 +49,7 @@ export default {
         }
     },
     getMsgs: (state) => (cena, msg) => {
-        return state.msgs.find(dialog => dialog.cena === cena & dialog.msg === msg)
+        return state.msgs_cel.find(dialog => dialog.cena === cena & dialog.msg === msg)
     },
     getObjectMsg: (state) => (cena, item) => {
         return state.objetos.find(objeto => objeto.cena === cena & objeto.objeto === item)
@@ -59,7 +59,30 @@ export default {
 
         return dialog
     },
+    getLastMsg: (state) => () => {
+        var dialog = state.msgs_vistas.slice(-1)[0]
+
+        return dialog
+    },
     getCellNotif: (state) => () => {
         return state.notif_celular
+    },
+    readyNextScene: (state) => () => {
+        var ready = false
+
+        if (state.cena === 1 && state.dialogo_sequencia === 9 && state.msgs_sequencia === 31){
+            ready = true
+        }
+
+        return ready
+    },
+    getChoice: (state) => () => {
+        var choice = {}
+
+        if (state.cena === 1 && state.dialogo_sequencia === 8 && state.msgs_sequencia === 14){
+            choice = state.escolhas.find(escolha => escolha.id === 1)
+        }
+
+        return choice
     }
 }

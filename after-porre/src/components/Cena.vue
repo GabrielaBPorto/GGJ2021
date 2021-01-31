@@ -78,10 +78,17 @@ export default {
             }
         },
         getNextDialog(){
-            this.$store.dispatch('proxDialog')
-            this.dialog = this.$store.getters.getLastDialog()
-            this.textoAtual = this.dialog.text
-            this.notificationCelular = this.$store.getters.getCellNotif()
+            if (!this.$store.getters.readyNextScene()){
+                this.$store.dispatch('proxDialog')
+                this.dialog = this.$store.getters.getLastDialog()
+                this.textoAtual = this.dialog.text
+                this.notificationCelular = this.$store.getters.getCellNotif()
+            }
+            else {
+                this.$store.dispatch('trocarCena')
+                this.$router.push('/cena')
+                this.$store.dispatch('musicStart')
+            }
         },
         characterImage() {
             return this.$store.getters.getImageById(this.bartenderAtual)
