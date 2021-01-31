@@ -81,8 +81,15 @@ export default {
 
     notif_celular (state){
         state.notif_celular = !state.notif_celular
-    }
+    },
 
+    setDialogSequence (state, jump){
+        state.dialogo_sequencia = jump
+    },
+
+    setMsgsSequence (state, jump){
+        state.msgs_sequencia = jump
+    },
 }
   
   

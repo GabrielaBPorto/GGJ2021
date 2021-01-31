@@ -16,11 +16,7 @@ export default {
     components:{
         TituloInicial
     },
-    methods: {
-      
-    },
-    mounted: {
-        
+    methods: {      
     }
   }
 </script>
