@@ -55,6 +55,20 @@ export default {
         }
     },
 
+    interfaceEffect (state, efeito) {
+        state.effects = new Audio(efeito)
+        state.effects.volume = 0.2
+        var effectPromise = state.effects.play()
+        if (effectPromise !== undefined) {
+            effectPromise.then(() => {
+                console.log('Tocando efeito: ' + efeito )
+            })
+            effectPromise.catch(error => {
+                console.error('Erro: ' + error)
+            })
+        }
+    },
+
     audioPlaying (state, isPlaying) {
         state.audioIsPlaying = isPlaying
     },

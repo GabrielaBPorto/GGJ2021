@@ -46,8 +46,10 @@ export default () => ({
       { id: 'pegar_celular', path: require('@/assets/sounds/pegar_celular.mp3')},
       { id: 'abrir_celular', path: require('@/assets/sounds/abrir_celular.mp3')},
 
-      { id: 'pegar_tecido', path: require('@/assets/sounds/pegar_tecido.mp3')},
+      { id: 'pegar_tecido', path: require('@/assets/sounds/pegar_tecido.mp3')},      
+    ],
 
+    interface_sounds: [
       { id: 'interface_1',   path: require('@/assets/sounds/interface_1.mp3')},
       { id: 'interface_2',   path: require('@/assets/sounds/interface_2.mp3')},
       { id: 'interface_3',   path: require('@/assets/sounds/interface_3.mp3')},

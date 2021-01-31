@@ -84,5 +84,9 @@ export default {
         }
 
         return choice
+    },
+    getRandomInterfaceSound: (state) => () => {
+        var rand = Math.floor(Math.random() * 4)
+        return state.interface_sounds[rand].path
     }
 }

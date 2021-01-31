@@ -25,6 +25,7 @@ export default {
 
     proxDialog ( {commit, state, getters }){
         var dialog = []
+        commit('interfaceEffect', getters.getRandomInterfaceSound())
 
         if (state.cena === 1 && state.dialogo_sequencia < 8 && !state.cena1_rota){
             commit('nextDialog')
@@ -44,7 +45,8 @@ export default {
 
     proxMsg ( {commit, state, getters }){
         var dialog = []
-
+        commit('interfaceEffect', getters.getRandomInterfaceSound())
+        
         if(state.cena === 1 && state.msgs_sequencia < 14 && !state.cena1_rota){
             commit('nextMsg')
             dialog = getters.getMsgs(state.cena, state.msgs_sequencia)
