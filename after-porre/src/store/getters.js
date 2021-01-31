@@ -29,7 +29,7 @@ export default {
             case 6:
                 return getters.getImageById('cartorio')
             default:
-                return getters.getImageById('quarto_dia')
+                return getters.getImageById('tela_inicial')
         }
     },
     getSceneMusicStart: (state) => () => {

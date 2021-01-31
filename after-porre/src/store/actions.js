@@ -23,9 +23,15 @@ export default {
         }
     },
 
-    proxDialog ( {commit, state, getters }){
-        var dialog = []
-        commit('interfaceEffect', getters.getRandomInterfaceSound())
+    proxDialog ( { state, dispatch }){
+        if (state.cena === 1){
+            dispatch('proxDialogCena1')
+        }
+
+    },
+
+    proxDialogCena1 ( { commit, state, getters }){
+        var dialog = []        
 
         if (state.cena === 1 && state.dialogo_sequencia < 8 && !state.cena1_rota){
             commit('nextDialog')
@@ -41,9 +47,19 @@ export default {
             dialog = getters.getDialog(state.cena, state.dialogo_sequencia)
             commit('adicionaDialogVisto', dialog)
         }
+        
+        if (dialog.cena > 0){
+            commit('interfaceEffect', getters.getRandomInterfaceSound())
+        }
     },
 
-    proxMsg ( {commit, state, getters }){
+    proxMsg ( { state, dispatch }){
+        if (state.cena === 1){
+            dispatch('proxMsgCena1')
+        }
+    },
+
+    proxMsgCena1 ( { commit, state, getters }){
         var dialog = {}        
         if(state.cena === 1 && state.msgs_sequencia < 14 && !state.cena1_rota){
             commit('nextMsg')
