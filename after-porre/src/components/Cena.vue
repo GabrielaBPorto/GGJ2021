@@ -21,7 +21,7 @@
             <v-row style="right:0px;min-height:380px;" class="mt-10 pt-10">
                 <v-container fluid class="ma-2 d-flex justify-end" v-for="escolha in choices" :key="escolha.index" >
                     <v-col cols="12" sm="4">
-                        <v-card min-height="100px" class="caixaTexto" tile>
+                        <v-card min-height="100px" class="caixaTexto" tile @click="chooseOption(escolha.index)">
                             <v-card-text>
                                 {{ escolha.msg }}
                             </v-card-text>
@@ -156,7 +156,6 @@ export default {
     methods: {
         getNextMsg(){
             this.choices = this.$store.getters.getChoice()
-            console.log(this.choices.options)
             if (this.choices.options == undefined){
                 this.$store.dispatch('proxMsg')
                 let message = this.$store.getters.getLastMsg()
@@ -164,6 +163,7 @@ export default {
             }
             else {
                 this.choices = this.choices.options
+                this.notificationCelular = this.$store.getters.getCellNotif()
             }
         },
         backgroundImage() {
@@ -232,6 +232,13 @@ export default {
             else{
                 return false
             }
+        },
+        chooseOption(index) {
+            console.log(index)
+            this.$store.dispatch('rotaCena1',index)
+            this.getNextMsg()
+            this.getNextDialog()
+
         }
     }
 
