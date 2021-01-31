@@ -71,6 +71,9 @@ export default {
             }
             dialog = getters.getMsgs(state.cena, state.msgs_sequencia)
             commit('adicionaMsgVista', dialog)
+            if (state.msgs_sequencia === 31){
+                commit('notif_celular')
+            }
         }
     }
 }

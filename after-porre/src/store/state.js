@@ -170,6 +170,10 @@ export default () => ({
       { cena: 1, objeto: 'cueca', text: '.... de quem é essa cueca e como ela veio parar aqui?'},
     ],
 
+    escolhas: [
+      { id: 1, escolha_1: 'Não acho que eles tem esse drink no cardápio...', escolha_2: 'Como assim eu sumi? A balada nem é tão grande assim'}
+    ],
+
     // Estados Internos do Jogo
     oculos: 0,
     notif_celular: false,

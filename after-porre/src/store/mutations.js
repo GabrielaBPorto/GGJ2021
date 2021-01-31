@@ -68,7 +68,7 @@ export default {
     },
 
     adicionaMsgVista (state, msg){
-        state.msgs_vistos.push(msg)
+        state.msgs_vistas.push(msg)
     },
 
     nextDialog (state){
