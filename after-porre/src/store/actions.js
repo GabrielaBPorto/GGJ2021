@@ -68,7 +68,7 @@ export default {
         }
     },
 
-    proxMsgCena1 ( { commit, state, getters }){
+    proxMsgCena1 ( { commit, state, getters } ){
         var dialog = {}        
         if(state.cena === 1 && state.msgs_sequencia < 14 && !state.cena1_rota){
             commit('nextMsg')
@@ -110,7 +110,25 @@ export default {
                 commit('phoneEffect', getters.getSoundById('mensagem_recebida_chat'))
             }
         }
-    }
+    },
+
+    objectClick ( { state, dispatch }, idObjeto){
+        if (state.cena === 1){
+            dispatch('objectClickCena1', idObjeto)
+        }
+    },
+
+    objectClickCena1 ( { commit, state, getters }, idObjeto){
+        var dialog = {}
+        var item = idObjeto
+
+        if (state.oculos === 0 && item === 'cueca'){
+            item = 'cueca_blur'
+        }
+
+        dialog = getters.getObjectMsg(state.cena, item)
+        commit('adicionaDialogoVisto', dialog)
+    },
 }
   
   

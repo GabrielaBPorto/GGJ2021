@@ -170,10 +170,10 @@ export default () => ({
     ],
 
     objetos: [
-      { cena: 1, objeto: 'celular', text: 'É, sem meus óculos não vou conseguir ler nada...'},
-      { cena: 1, objeto: 'cueca_blur', text: 'O que diabos será que é isso?'},
-      { cena: 1, objeto: 'cueca', text: '.... de quem é essa cueca e como ela veio parar aqui?'},
-      { cena: 1, objeto: 'remedio', text: 'Espero que isso pare minha tontura.'}
+      { cena: 1, objeto: 'celular', text: 'É, sem meus óculos não vou conseguir ler nada...', nome: 'Alex', imagem: 'oculos'},
+      { cena: 1, objeto: 'cueca_blur', text: 'O que diabos será que é isso?', nome: 'Alex', imagem: 'transparente'},
+      { cena: 1, objeto: 'cueca', text: '.... de quem é essa cueca e como ela veio parar aqui?', nome: 'Alex', imagem: 'cueca'},
+      { cena: 1, objeto: 'remedio', text: 'Espero que isso pare minha tontura.', nome: 'Alex', imagem: 'remedio'}
     ],
 
     escolhas: [
