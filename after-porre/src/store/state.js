@@ -115,7 +115,7 @@ export default () => ({
     // Diálogos
     dialogs: [
       { cena: 1, sequencia: 1, personagem: 'narrador', text: 'Você acorda grunhindo em sua cama, olhos sensíveis a pouca luz do Sol entrando no quarto.'},
-      { cena: 1, sequencia: 2, personagem: 'celular', text: 'Uuuugggghhh... que dor de cabeça... será que alguém anotou a placa do ônibus que me atropelou?'},
+      { cena: 1, sequencia: 2, personagem: 'mc', text: 'Uuuugggghhh... que dor de cabeça... será que alguém anotou a placa do ônibus que me atropelou?'},
       { cena: 1, sequencia: 3, personagem: 'mc', text: 'A propósito, como será que eu cheguei em casa?'},
       { cena: 1, sequencia: 4, personagem: 'narrador', text: 'Você coloca as mãos na cabeça, massageando suas tempôras para fazer passar a dor.'},
       { cena: 1, sequencia: 5, personagem: 'mc', text: 'Não consigo lembrar de nada que aconteceu ontem a noite... e já é tarde, mal entra luz pela janela...'},     
@@ -163,13 +163,14 @@ export default () => ({
       { cena: 1, msg: 28, chat: 'melhor_amigo', sender: false, time: '17:09', text: 'Aaaah minha querida, confio mt nas suas habilidades sociais'},
       { cena: 1, msg: 30, chat: 'melhor_amigo', sender: false, time: '17:10', text: 'Tenho certeza que rolou algo assim'},
 
-      { cena: 1, msg: 31, chat: 'melhor_amigo', sender: false, time: '17:10', text: 'Enfim, tá em condições de vir aqui em casa pra conversarmos?'},
+      { cena: 1, msg: 31, chat: 'melhor_amigo', sender: false, time: '17:10', text: 'Hahahaha. A propósito, vou passar na Velvet agora.'},
     ],
 
     objetos: [
       { cena: 1, objeto: 'celular', text: 'É, sem meus óculos não vou conseguir ler nada...'},
       { cena: 1, objeto: 'cueca_blur', text: 'O que diabos será que é isso?'},
       { cena: 1, objeto: 'cueca', text: '.... de quem é essa cueca e como ela veio parar aqui?'},
+      { cena: 1, objeto: 'remedio', text: 'Espero que isso pare minha tontura.'}
     ],
 
     escolhas: [

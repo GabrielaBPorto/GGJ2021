@@ -18,8 +18,16 @@ export default {
                 return getters.getImageById('tela_inicial')
             case 1:
                 return getters.getImageById('quarto_manha')
-            case 3:
+            case 2:
                 return getters.getImageById('bar')
+            case 3:
+                return getters.getImageById('quarto_amigo')
+            case 4:
+                return getters.getImageById('quarto_noite')
+            case 5:
+                return getters.getImageById('quarto_dia')
+            case 6:
+                return getters.getImageById('cartorio')
             default:
                 return getters.getImageById('quarto_dia')
         }

@@ -44,9 +44,7 @@ export default {
     },
 
     proxMsg ( {commit, state, getters }){
-        var dialog = []
-        commit('interfaceEffect', getters.getRandomInterfaceSound())
-        
+        var dialog = {}        
         if(state.cena === 1 && state.msgs_sequencia < 14 && !state.cena1_rota){
             commit('nextMsg')
             dialog = getters.getMsgs(state.cena, state.msgs_sequencia)
@@ -76,6 +74,15 @@ export default {
             commit('adicionaMsgVista', dialog)
             if (state.msgs_sequencia === 31){
                 commit('notif_celular')
+            }
+        }
+
+        if (dialog.cena){
+            if (dialog.sender === true){
+                commit('phoneEffect', getters.getSoundById('mensagem_enviada_chat'))
+            }
+            else{
+                commit('phoneEffect', getters.getSoundById('mensagem_recebida_chat'))
             }
         }
     }
