@@ -134,17 +134,30 @@ export default () => ({
       
       { cena: 2, sequencia: 7, personagem: 'mc', text: 'Encaro a garota até ela puxar assunto.', nome: 'ALEX', imagem: 'transparente'},      
       { cena: 2, sequencia: 8, personagem: 'mc', text: '"Hã, com licença moça?"', nome: 'ALEX', imagem: 'transparente'},
-      { cena: 2, sequencia: 9, personagem: 'mc', text: '"Boa noite! Chegou cedo hoje hein? A festa mal começou ainda hahaha."', nome: 'LOLA AYANAM', imagem: 'bartender_feliz'},
-      { cena: 2, sequencia: 10, personagem: 'mc', text: '"Quer pedir algum drink? O especial da noite é o Soco no Estômago!"', nome: 'LOLA AYANAM', imagem: 'bartender_feliz'},
-      { cena: 2, sequencia: 11, personagem: 'mc', text: '"É uma mistura de vodka, refrigerante de guaraná e chocolate branco."', nome: 'LOLA AYANAM', imagem: 'bartender_feliz'},
+      { cena: 2, sequencia: 9, personagem: 'lola', text: '"Boa noite! Chegou cedo hoje hein? A festa mal começou ainda hahaha."', nome: 'LOLA AYANAMI', imagem: 'bartender_feliz'},
+      { cena: 2, sequencia: 10, personagem: 'lola', text: '"Quer pedir algum drink? O especial da noite é o Soco no Estômago!"', nome: 'LOLA AYANAMI', imagem: 'bartender_feliz'},
+      { cena: 2, sequencia: 11, personagem: 'lola', text: '"É uma mistura de vodka, refrigerante de guaraná e chocolate branco."', nome: 'LOLA AYANAMI', imagem: 'bartender_feliz'},
 
-      // Cena 2 Rota 2 - Bad End
+      // Cena 2, Escolha 1, Rota 2 - Bad End
       { cena: 2, sequencia: 12, personagem: 'mc', text: '"Acho que eu não deveria... mas vou querer um Soco no Estômago!"', nome: 'ALEX', imagem: 'transparente'},
       { cena: 2, sequencia: 13, personagem: 'mc', text: '"Você bebeu demais, outra vez."', nome: 'BAD ENDING', imagem: 'transparente'},
 
-      // Cena 2, Rota 1
+      // Cena 2, Escolha 1, Rota 1
       { cena: 2, sequencia: 14, personagem: 'mc', text: '"Na verdade... hoje vou ficar só na água com gás."', nome: 'ALEX', imagem: 'transparente'},
+      { cena: 2, sequencia: 15, personagem: 'lola', text: '"Aqui está! Mas e então, o que lhe trás tão cedo aqui?"', nome: 'LOLA AYANAMI', imagem: 'bartender'},
+      { cena: 2, sequencia: 16, personagem: 'mc', text: '"Ah, eu vim aqui ontem e acabei perdendo algumas coisas durante a noite."', nome: 'ALEX', imagem: 'transparente'},
+      { cena: 2, sequencia: 17, personagem: 'mc', text: '"Então voltei para procurar. Já consegui pegar a carteira com o segurança."', nome: 'ALEX', imagem: 'transparente'},
+      { cena: 2, sequencia: 18, personagem: 'lola', text: '"Entendi! Não estava trabalhando ontem, mas meu colega comentou sobre alguém que exagerou na bebida."', nome: 'LOLA AYANAMI', imagem: 'bartender_feliz'},
+      { cena: 2, sequencia: 19, personagem: 'lola', text: '"E ela acabou passando MUITA vergonha durante a noite! HAHAHAHA!"', nome: 'LOLA AYANAMI', imagem: 'bartender_feliz'},
+      { cena: 2, sequencia: 20, personagem: 'mc', text: 'Mas não é possível...', nome: 'ALEX', imagem: 'transparente'},
 
+      { cena: 2, sequencia: 21, personagem: 'mc', text: '"Nossa, mas o que exatamente essa pessoa fez??? Hahahaha..."', nome: 'ALEX', imagem: 'transparente'},
+      { cena: 2, sequencia: 22, personagem: 'lola', text: '"Ah, ele me contou que ela dormiu no fumódromo, hahaha!"', nome: 'LOLA AYANAMI', imagem: 'bartender_pensativa'},
+
+      { cena: 2, sequencia: 23, personagem: 'mc', text: 'Rindo de nervoso, respondo: "Hahaha...."', nome: 'ALEX', imagem: 'transparente'},
+      { cena: 2, sequencia: 24, personagem: 'lola', text: '"E ela também chegou a lamber o corrimão da balada HAHAHAHAHA!!!"', nome: 'LOLA AYANAMI', imagem: 'bartender_rindo'},
+
+      //Inserir Cena 2, Escolha 2, Rotas 1 e 2
     ],
     
     msgs_cel: [
@@ -211,6 +224,8 @@ export default () => ({
     musica_inicio: 'inicio_inicio',
     musica_loop: 'inicio_loop',
     cena1_rota: 0,
+    cena2_escolha1: 0,
+    cena2_escolha2: 0,
     audioIsPlaying: false,
     music: Audio,
     effects: Audio,
