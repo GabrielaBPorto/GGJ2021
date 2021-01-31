@@ -77,11 +77,6 @@ export default {
                 return this.$store.getters.getImageById('icone_celular')
             }
         },
-        randomizeInfo(){
-            this.sequencia = ((this.sequencia % 7) + 1)
-            this.dialog = this.$store.getters.getDialog(this.$store.state.cena, this.sequencia)
-            this.textoAtual = this.dialog.text
-        },
         getNextDialog(){
             this.$store.dispatch('proxDialog')
             this.dialog = this.$store.getters.getLastDialog()

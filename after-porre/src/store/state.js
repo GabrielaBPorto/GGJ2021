@@ -121,11 +121,6 @@ export default () => ({
       { cena: 1, sequencia: 7, personagem: 'óculos', text: 'Droga, se esse é meu óculos antigo, onde será que está o novo? Bom, melhor que nada.'},      
       { cena: 1, sequencia: 8, personagem: 'mc', text: 'Quantas mensagens não lidas...'},
       { cena: 1, sequencia: 9, personagem: 'mc', text: 'Cadê minha carteira? Melhor ir atrás de tudo que perdi.'},
-
-
-      { cena: 1, sequencia: 997, personagem: 'celular', text: 'É, sem meus óculos não vou conseguir ler nada...'},
-      { cena: 1, sequencia: 998, personagem: 'cueca', text: 'O que diabos será que é isso?'},
-      { cena: 1, sequencia: 999, personagem: 'cueca', text: '.... de quem é essa cueca e como ela veio parar aqui?'},
     ],
     
     msgs_cel: [
