@@ -74,18 +74,23 @@ export default {
             commit('nextMsg')
             dialog = getters.getMsgs(state.cena, state.msgs_sequencia)
             commit('adicionaMsgVista', dialog)
+            if(state.msgs_sequencia == 14){
+                commit('notif_celular')
+            }
         }
 
         if(state.cena === 1 && state.msgs_sequencia === 14 && state.rotaCena1 === 1){
             commit('setMsgSequence', 15)
             dialog = getters.getMsgs(state.cena, state.msgs_sequencia)
             commit('adicionaMsgVista', dialog)
+            commit('notif_celular')
         }
 
         if(state.cena === 1 && state.msgs_sequencia === 14 && state.rotaCena1 === 2){
             commit('setMsgSequence', 24)
             dialog = getters.getMsgs(state.cena, state.msgs_sequencia)
             commit('adicionaMsgVista', dialog)
+            commit('notif_celular')
         }
 
         if(state.cena === 1 && state.msgs_sequencia < 33 && state.rotaCena1 > 0){

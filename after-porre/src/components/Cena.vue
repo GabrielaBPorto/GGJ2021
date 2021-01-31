@@ -163,7 +163,6 @@ export default {
             }
             else {
                 this.choices = this.choices.options
-                this.notificationCelular = this.$store.getters.getCellNotif()
             }
         },
         backgroundImage() {
@@ -203,6 +202,8 @@ export default {
         },
         openPhone(){
             this.phone = !this.phone
+            this.notificationCelular = this.$store.getters.getCellNotif()
+            this.getNextMsg()
             if(this.phone){
                 this.styleBlur = "filter: blur(10px)"
                 this.imagemPersonagem = 'melhor_amigo'
