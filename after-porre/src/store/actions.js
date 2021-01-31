@@ -11,7 +11,7 @@ export default {
         commit('resetSequencias')
     },
 
-    rotaCena1 ( {commit, rota} ) {
+    rotaCena1 ( {commit}, rota ) {
         commit('rotaCena1', rota)
     },
     
@@ -42,7 +42,7 @@ export default {
                 commit('soundEffect', getters.getSoundById('notif_celular'))
             }
         }
-        if (state.cena === 1 && state.dialogo_sequencia < 8 && state.oculos > 0 && !state.cena1_rota){
+        if (state.cena === 1 && state.dialogo_sequencia < 8 && state.oculos > 0 && !state.rotaCena1){
             commit('nextDialog')
             dialog = getters.getDialog(state.cena, state.dialogo_sequencia)
             commit('adicionaDialogVisto', dialog)
@@ -70,25 +70,25 @@ export default {
 
     proxMsgCena1 ( { commit, state, getters } ){
         var dialog = {}        
-        if(state.cena === 1 && state.msgs_sequencia < 14 && !state.cena1_rota){
+        if(state.cena === 1 && state.msgs_sequencia < 14 && !state.rotaCena1){
             commit('nextMsg')
             dialog = getters.getMsgs(state.cena, state.msgs_sequencia)
             commit('adicionaMsgVista', dialog)
         }
 
-        if(state.cena === 1 && state.msgs_sequencia === 14 && state.cena1_rota === 1){
+        if(state.cena === 1 && state.msgs_sequencia === 14 && state.rotaCena1 === 1){
             commit('setMsgSequence', 15)
             dialog = getters.getMsgs(state.cena, state.msgs_sequencia)
             commit('adicionaMsgVista', dialog)
         }
 
-        if(state.cena === 1 && state.msgs_sequencia === 14 && state.cena1_rota === 2){
+        if(state.cena === 1 && state.msgs_sequencia === 14 && state.rotaCena1 === 2){
             commit('setMsgSequence', 24)
             dialog = getters.getMsgs(state.cena, state.msgs_sequencia)
             commit('adicionaMsgVista', dialog)
         }
 
-        if(state.cena === 1 && state.msgs_sequencia < 33 && state.cena1_rota > 0){
+        if(state.cena === 1 && state.msgs_sequencia < 33 && state.rotaCena1 > 0){
             if (state.msgs_sequencia === 23){
                 commit('setMsgSequence', 31)
             }

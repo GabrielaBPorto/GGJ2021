@@ -86,7 +86,9 @@ export default {
     getChoice: (state) => () => {
         var choice = {}
 
-        if (state.cena === 1 && state.dialogo_sequencia === 8 && state.msgs_sequencia === 14){
+        console.log('weeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee')
+        console.log(state.rotaCena1)
+        if (state.cena === 1 && state.dialogo_sequencia === 8 && state.msgs_sequencia === 14 && state.rotaCena1 == 0){
             choice = state.escolhas.find(escolha => escolha.id === 1)
         }
         return choice

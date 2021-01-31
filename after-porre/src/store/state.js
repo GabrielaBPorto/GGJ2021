@@ -233,7 +233,7 @@ export default () => ({
     cena: 0,
     musica_inicio: 'inicio_inicio',
     musica_loop: 'inicio_loop',
-    cena1_rota: 0,
+    rotaCena1: 0,
     cena2_escolha1: 0,
     cena2_escolha2: 0,
     audioIsPlaying: false,
