@@ -5,6 +5,11 @@
             src="@/assets/images/afterporreTelaInicial.png"
             style="position:relative; display:inline-block;top:45%;margin-right:20px"
             ></v-img>
+            -
+        <v-img
+            lazy-src="https://cdn.discordapp.com/attachments/804368222953537627/805287761325981696/personagens3.png"
+            src="https://cdn.discordapp.com/attachments/804368222953537627/805287761325981696/personagens3.png"
+            style="position:absolute;top:35%;z-index:1"> </v-img>
         <v-row style="position:absolute;top:45%">
             <v-container style="border:solid;border-color:#a7e5fb;">
                 <v-col cols="12" sm="12">
@@ -22,7 +27,7 @@
                 <v-row class="mt-5">
                     <v-spacer class="mt-4"></v-spacer>
                     <v-col cols="12" sm="12" class="mt-5">
-                        <v-card flat class="d-flex justify-center">
+                        <v-card flat class="d-flex justify-center" >
                             <v-btn id="botaoStart" outlined flat x-large v-on:click="functionsStartButton()">START</v-btn>
                         </v-card>
                     </v-col>
