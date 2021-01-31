@@ -29,13 +29,14 @@ export default {
             state.music.load()
         }
         state.music = new Audio(payload.inicio)
-        state.music.volume = 0.6
+        state.music.volume = 0.3
         state.music.play()
 
         state.music.addEventListener('ended', () => {
             console.log('Música original se encerrou')
             state.music.load()
             state.music.src = payload.loop
+            state.music.volume = 0.3
             state.music.loop = true
             state.music.play()
         });

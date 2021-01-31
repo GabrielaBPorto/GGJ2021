@@ -32,6 +32,7 @@ export default {
             commit('adicionaDialogVisto', dialog)
             if (state.dialogo_sequencia === 8){
                 commit('notif_celular')
+                commit('soundEffect', getters.getSoundById('notif_celular'))
             }
         }
         if (state.cena === 1 && state.dialogo_sequencia === 8 && state.msgs_sequencia === 31){
