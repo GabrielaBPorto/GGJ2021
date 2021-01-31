@@ -15,8 +15,8 @@
                     </v-col>
                 </v-container>
             </v-row>
-            <v-row style="right:0px;" class="mt-10 pt-10" >
-                <v-container fluid class="ma-2 d-flex justify-end" v-for="escolha in escolhas" :key="escolha.id">
+            <v-row style="right:0px;min-height:380px;" class="mt-10 pt-10">
+                <v-container fluid class="ma-2 d-flex justify-end" v-for="escolha in escolhas" :key="escolha.id" >
                     <v-col cols="12" sm="4">
                         <v-card min-height="100px" class="caixaTexto" tile>
                             <v-card-text>
@@ -36,7 +36,7 @@
 
                             </v-img>
                             <v-card-text id="dialogo" style="position:absolute;top:0;left: 10%">
-                                {{this.textoAtual}}
+                                {{ this.textoAtual }}
                             </v-card-text>
                         </v-card>
                     </v-col>
@@ -50,11 +50,12 @@
 export default {
     data: () => ({
         notificationCelular: false,
-        escolhas : [{id:0, msg:'Por que isso'}, {id:1, msg:'2'}],
+        escolhas : [{id: 1, msg: 'ola'}, {id: 2, msg:'bleh'}],
         textoAtual : '',
         bartenderAtual : 'bartender_rindo',
         sequencia: 0,
-        dialog: {}
+        dialog: {},
+        disappear: '',
     }),
     methods: {
         backgroundImage() {
@@ -78,6 +79,11 @@ export default {
         },
         characterImage() {
             return this.$store.getters.getImageById(this.bartenderAtual)
+        }
+    },
+    mounted() {
+        if(this.escolhas.length > 0){
+            this.disappear = 'visibility:visible;'
         }
     }
 
