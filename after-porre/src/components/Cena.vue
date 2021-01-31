@@ -156,7 +156,7 @@ export default {
     methods: {
         getNextMsg(){
             this.choices = this.$store.getters.getChoice()
-            if (this.choices.options == undefined){
+            if (this.choices.options == undefined && this.notificationCelular){
                 this.$store.dispatch('proxMsg')
                 let message = this.$store.getters.getLastMsg()
                 this.messages.push(message)

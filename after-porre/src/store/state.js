@@ -208,9 +208,9 @@ export default () => ({
       { cena: 1, msg: 28, chat: 'melhor_amigo', sender: false, time: '17:09', text: 'Aaaah minha querida, confio mt nas suas habilidades sociais'},
       { cena: 1, msg: 30, chat: 'melhor_amigo', sender: false, time: '17:10', text: 'Tenho certeza que rolou algo assim'},
 
-      { cena: 1, msg: 31, chat: 'melhor_amigo', sender: false, time: '17:11', text: 'Hahahaha. A propósito, vou ter que passar na Velvet agora'},
-      { cena: 1, msg: 32, chat: 'melhor_amigo', sender: false, time: '17:12', text: 'Acho que perdi algumas coisas por lá'},
-      { cena: 1, msg: 33, chat: 'melhor_amigo', sender: false, time: '17:12', text: 'Devem estar nos achados e perdidos'},
+      { cena: 1, msg: 31, chat: 'melhor_amigo', sender: true, time: '17:11', text: 'Hahahaha. A propósito, vou ter que passar na Velvet agora'},
+      { cena: 1, msg: 32, chat: 'melhor_amigo', sender: true, time: '17:12', text: 'Acho que perdi algumas coisas por lá'},
+      { cena: 1, msg: 33, chat: 'melhor_amigo', sender: true, time: '17:12', text: 'Devem estar nos achados e perdidos'},
     ],
 
     objetos: [
