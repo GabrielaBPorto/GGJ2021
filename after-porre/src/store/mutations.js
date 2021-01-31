@@ -77,6 +77,10 @@ export default {
 
     nextMsg (state){
         state.msgs_sequencia++
+    },
+
+    notif_celular (state){
+        state.notif_celular = !state.notif_celular
     }
 
 }

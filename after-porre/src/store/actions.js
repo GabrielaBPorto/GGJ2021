@@ -24,14 +24,28 @@ export default {
     },
 
     proxDialog ( {commit, state, getters }){
-        commit('nextDialog')
-        var dialog = getters.getDialog(state.cena, state.dialogo_sequencia)
-        commit('adicionaDialogVisto', dialog)
+        var dialog = []
+
+        if (state.cena === 1 && state.dialogo_sequencia < 8 && !state.cena1_rota){
+            commit('nextDialog')
+            dialog = getters.getDialog(state.cena, state.dialogo_sequencia)
+            commit('adicionaDialogVisto', dialog)
+            if (state.dialogo_sequencia === 8){
+                commit('notif_celular')
+            }
+        }
+        if (state.cena === 1 && state.dialogo_sequencia === 8 && state.cena1_rota){
+            commit('nextDialog')
+            dialog = getters.getDialog(state.cena, state.dialogo_sequencia)
+            commit('adicionaDialogVisto', dialog)
+        }
     },
 
     proxMsg ( {commit, state, getters }){
+        var dialog = []
+
         commit('nextMsg')
-        var dialog = getters.getMsgs(state.cena, state.msgs_sequencia)
+        dialog = getters.getMsgs(state.cena, state.msgs_sequencia)
         commit('adicionaMsgVista', dialog)
     }
 }
