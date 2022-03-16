@@ -1,0 +1,67 @@
+@import url('https://fonts.googleapis.com/css2?family=Major+Mono+Display&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
+.background-image {
+    position: relative;
+    display: inline-block;
+    top: 45%;
+    margin-right: 20px;
+}
+
+.char-image {
+    position: absolute;
+    top: 45%;
+    z-index: 1
+}
+
+.content {
+    position: absolute;
+    top: 45%;
+}
+
+.title-box {
+    border: solid;
+    border-color: #a7e5fb;
+}
+
+#titulo-parte1 {
+    color: #f579aa;
+    font-size: 117px;
+    font-family: 'Major Mono Display', monospace;
+}
+
+#titulo-parte2 {
+    color: #a7e5fb;
+    font-size: 117px;
+    font-family: 'Major Mono Display', monospace;
+}
+
+.v-card {
+    background-color: transparent !important;
+}
+
+.teste-wrap {
+    position: relative;
+    text-align: center;
+}
+
+.teste-wrap .v-row {
+    position: absolute;
+    z-index: 1;
+    top: 50%;
+    left: 50%;
+    padding: 0;
+    border: 0 none;
+}
+
+#botaoStart {
+    min-height: 84px;
+    border-color: #8ef4c0;
+    z-index: 10;
+}
+
+#botaoStart span {
+    height: 100% !important;
+    font-family: 'VT323', monospace;
+    color: #8ef4c0;
+    font-size: 60px;
+}

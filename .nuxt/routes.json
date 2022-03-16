@@ -1,0 +1,30 @@
+[
+  {
+    "name": "cena",
+    "path": "/cena",
+    "component": "/home/gabi/GGJ2021/nuxt-after-porre/pages/cena/index.vue",
+    "chunkName": "pages/cena/index",
+    "_name": "_4157a140"
+  },
+  {
+    "name": "script",
+    "path": "/script",
+    "component": "/home/gabi/GGJ2021/nuxt-after-porre/pages/script.js",
+    "chunkName": "pages/script",
+    "_name": "_a0f83348"
+  },
+  {
+    "name": "cena-script",
+    "path": "/cena/script",
+    "component": "/home/gabi/GGJ2021/nuxt-after-porre/pages/cena/script.js",
+    "chunkName": "pages/cena/script",
+    "_name": "_1e6c3e42"
+  },
+  {
+    "name": "index",
+    "path": "/",
+    "component": "/home/gabi/GGJ2021/nuxt-after-porre/pages/index.vue",
+    "chunkName": "pages/index",
+    "_name": "_706bd77a"
+  }
+]

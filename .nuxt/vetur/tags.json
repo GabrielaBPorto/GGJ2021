@@ -1,0 +1,20 @@
+{
+  "Cena": {
+    "description": "Auto imported from components/Cena/index.vue"
+  },
+  "CenaScript": {
+    "description": "Auto imported from components/Cena/script.js"
+  },
+  "TelaInicialTela": {
+    "description": "Auto imported from components/TelaInicial/Tela/index.vue"
+  },
+  "TelaInicialTelaScript": {
+    "description": "Auto imported from components/TelaInicial/Tela/script.js"
+  },
+  "TelaInicialTitulo": {
+    "description": "Auto imported from components/TelaInicial/Titulo/index.vue"
+  },
+  "TelaInicialTituloScript": {
+    "description": "Auto imported from components/TelaInicial/Titulo/script.js"
+  }
+}
